@@ -4,8 +4,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
-
-import java.sql.Timestamp;
+import java.time.LocalDateTime;
 
 import static javax.persistence.CascadeType.ALL;
 import static javax.persistence.FetchType.LAZY;
@@ -20,7 +19,9 @@ public class OrdersHistory {
     @GeneratedValue(strategy = SEQUENCE)
     private int id;
 
-    private Timestamp orderTime;
+    @Column(name = "order_time", columnDefinition = "TIMESTAMP")
+    private LocalDateTime orderTime;
+
     private int orderPrice;
 
     @ManyToOne(fetch = LAZY, cascade = ALL)

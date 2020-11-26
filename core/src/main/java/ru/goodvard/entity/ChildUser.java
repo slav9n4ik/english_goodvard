@@ -4,8 +4,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
-
-import java.sql.Timestamp;
+import java.time.LocalDateTime;
 
 import static javax.persistence.GenerationType.SEQUENCE;
 
@@ -21,5 +20,7 @@ public class ChildUser {
     private double experience;
     private double experienceInCurrentSchool;
     private int ages;
-    private Timestamp updateTime;
+
+    @Column(name = "update_time", columnDefinition = "TIMESTAMP")
+    private LocalDateTime updateTime;
 }
