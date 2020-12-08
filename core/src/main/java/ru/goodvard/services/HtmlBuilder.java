@@ -1,6 +1,6 @@
 package ru.goodvard.services;
 
-import ru.goodvard.dto.SendEmailDto;
+import ru.goodvard.controller.dto.SendEmailDto;
 
 public interface HtmlBuilder {
     String customerResponseHtml(String customerName);

@@ -2,6 +2,7 @@ package ru.goodvard.entity;
 
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import ru.goodvard.controller.dto.SendEmailDto;
 
 import javax.persistence.*;
 
@@ -16,7 +17,8 @@ import static javax.persistence.GenerationType.SEQUENCE;
 @NoArgsConstructor
 public class ParentUser {
     @Id
-    @GeneratedValue(strategy = SEQUENCE)
+    @SequenceGenerator(name="p-user-seq-gen", sequenceName="user_seq_gen")
+    @GeneratedValue(strategy = SEQUENCE, generator="p-user-seq-gen")
     private int id;
     private String name;
     private String surname;
@@ -26,9 +28,18 @@ public class ParentUser {
     private String description;
 
     @Enumerated(STRING)
-    private UserStatus userStatus;
+    private UserStatus status;
 
     @ManyToOne(fetch = LAZY, cascade = ALL)
     @JoinColumn(name = "child_id")
     private ChildUser childUser;
+
+    public static ParentUser fromDto(SendEmailDto request, UserStatus status) {
+        ParentUser parentUser = new ParentUser();
+        parentUser.setName(request.getName());
+        parentUser.setPhone(request.getPhone());
+        parentUser.setEmail(request.getEmail());
+        parentUser.setStatus(status);
+        return parentUser;
+    }
 }

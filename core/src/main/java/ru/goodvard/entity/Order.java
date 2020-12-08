@@ -3,10 +3,7 @@ package ru.goodvard.entity;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 import static javax.persistence.GenerationType.SEQUENCE;
 
@@ -16,7 +13,8 @@ import static javax.persistence.GenerationType.SEQUENCE;
 @NoArgsConstructor
 public class Order {
     @Id
-    @GeneratedValue(strategy = SEQUENCE)
+    @SequenceGenerator(name="order-seq-gen", sequenceName="order_seq_gen")
+    @GeneratedValue(strategy = SEQUENCE, generator="order-seq-gen")
     private int id;
 
     private String name;

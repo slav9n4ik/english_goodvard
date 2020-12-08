@@ -15,7 +15,7 @@ CREATE TABLE parent_user (
     email varchar(255),
     phone varchar(255) unique,
     description varchar(1000),
-    status_id int,
+    status varchar(255),
     child_id int,
     constraint child_user_fk foreign key (child_id) references child_user (id) on delete cascade
 );

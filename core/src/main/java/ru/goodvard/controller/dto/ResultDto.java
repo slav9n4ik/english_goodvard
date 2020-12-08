@@ -1,4 +1,4 @@
-package ru.goodvard.dto;
+package ru.goodvard.controller.dto;
 
 import lombok.Data;
 

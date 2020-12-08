@@ -7,6 +7,7 @@ import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpHeaders;
 import org.springframework.stereotype.Component;
 import org.springframework.web.client.RestTemplate;
+import ru.goodvard.exceptions.SendMessageException;
 import ru.goodvard.integration.dto.MessageList;
 
 import static java.util.List.of;
@@ -37,15 +38,22 @@ public class EmailSenderImpl implements EmailSender {
     @Override
     public String sendHtmlText(String name, String to, String subject, String htmlTemplate) {
         MessageList messageList = new MessageList(of(mainMsgTemplateOf(from, requestName, to, subject, htmlTemplate)));
+        return send(new RestTemplate(), new HttpEntity<>(messageList, makeHeader()));
+    }
 
-        RestTemplate restTemplate = new RestTemplate();
+    private HttpHeaders makeHeader() {
         HttpHeaders headers = new HttpHeaders();
         headers.setContentType(APPLICATION_JSON);
         headers.add("Authorization", "Basic " + apiKeyBase64);
+        return headers;
+    }
 
-        HttpEntity<MessageList> request = new HttpEntity<>(messageList, headers);
-        String result = restTemplate.postForObject(mailUrl, request, String.class);
-        //TODO обработать исключения
-        return "Mail send success";
+    private String send(RestTemplate restTemplate, HttpEntity<MessageList> request) {
+        try {
+            return restTemplate.postForObject(mailUrl, request, String.class);
+        } catch (Exception e) {
+            log.error(e.getMessage());
+            throw new SendMessageException(e.getMessage());
+        }
     }
 }

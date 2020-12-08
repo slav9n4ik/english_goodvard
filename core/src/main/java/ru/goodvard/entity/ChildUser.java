@@ -14,7 +14,8 @@ import static javax.persistence.GenerationType.SEQUENCE;
 @NoArgsConstructor
 public class ChildUser {
     @Id
-    @GeneratedValue(strategy = SEQUENCE)
+    @GeneratedValue(strategy = SEQUENCE, generator="user-seq-gen")
+    @SequenceGenerator(name="user-seq-gen", sequenceName="user_seq_gen")
     private int id;
     private String name;
     private double experience;

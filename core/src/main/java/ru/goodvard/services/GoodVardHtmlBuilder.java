@@ -3,7 +3,7 @@ package ru.goodvard.services;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.core.io.Resource;
 import org.springframework.stereotype.Component;
-import ru.goodvard.dto.SendEmailDto;
+import ru.goodvard.controller.dto.SendEmailDto;
 
 import static ru.goodvard.FileUtils.readFromResource;
 

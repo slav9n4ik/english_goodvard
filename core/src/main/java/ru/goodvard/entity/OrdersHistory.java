@@ -16,7 +16,8 @@ import static javax.persistence.GenerationType.SEQUENCE;
 @NoArgsConstructor
 public class OrdersHistory {
     @Id
-    @GeneratedValue(strategy = SEQUENCE)
+    @SequenceGenerator(name="order-history-seq-gen", sequenceName="order_history_seq_gen")
+    @GeneratedValue(strategy = SEQUENCE, generator="order-history-seq-gen")
     private int id;
 
     @Column(name = "order_time", columnDefinition = "TIMESTAMP")

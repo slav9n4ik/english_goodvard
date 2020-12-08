@@ -6,8 +6,8 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
-import ru.goodvard.dto.ResultDto;
-import ru.goodvard.dto.SendEmailDto;
+import ru.goodvard.controller.dto.ResultDto;
+import ru.goodvard.controller.dto.SendEmailDto;
 import ru.goodvard.services.MailRequestProcessor;
 
 import static java.time.LocalDateTime.now;
