@@ -26,6 +26,7 @@ public class ParentUser {
     private String email;
     private String phone;
     private String description;
+    private Boolean subscribe;
 
     @Enumerated(STRING)
     private UserStatus status;

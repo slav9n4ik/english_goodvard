@@ -10,8 +10,8 @@ import ru.goodvard.controller.dto.ResultDto;
 import ru.goodvard.controller.dto.SendEmailDto;
 import ru.goodvard.services.MailRequestProcessor;
 
-import static java.time.LocalDateTime.now;
 import static org.springframework.http.HttpStatus.OK;
+import static ru.goodvard.controller.dto.ResultDto.resultOf;
 
 @Slf4j
 @RestController
@@ -23,7 +23,6 @@ public class MailRequestController {
     @PostMapping("/api/send")
     public ResponseEntity<ResultDto> sendEmail(@RequestBody SendEmailDto emailDto) {
         log.info("Send email request");
-        ResultDto result = new ResultDto(mailRequestProcessor.send(emailDto), now());
-        return new ResponseEntity<>(result, OK);
+        return new ResponseEntity<>(resultOf(mailRequestProcessor.send(emailDto)), OK);
     }
 }

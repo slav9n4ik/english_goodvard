@@ -1,4 +1,4 @@
-package ru.goodvard.services;
+package ru.goodvard.integration;
 
 import ru.goodvard.controller.dto.SendEmailDto;
 

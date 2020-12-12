@@ -17,6 +17,7 @@ CREATE TABLE parent_user (
     description varchar(1000),
     status varchar(255),
     child_id int,
+    subscribe boolean,
     constraint child_user_fk foreign key (child_id) references child_user (id) on delete cascade
 );
 

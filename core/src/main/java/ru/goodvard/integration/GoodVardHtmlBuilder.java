@@ -1,4 +1,4 @@
-package ru.goodvard.services;
+package ru.goodvard.integration;
 
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.core.io.Resource;

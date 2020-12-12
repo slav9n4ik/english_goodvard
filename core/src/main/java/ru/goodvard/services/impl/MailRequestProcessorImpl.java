@@ -1,4 +1,4 @@
-package ru.goodvard.services;
+package ru.goodvard.services.impl;
 
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -9,8 +9,8 @@ import ru.goodvard.entity.ParentUser;
 import ru.goodvard.exceptions.SaveDbException;
 import ru.goodvard.integration.EmailSender;
 import ru.goodvard.repository.ParentRepository;
-
-import java.util.List;
+import ru.goodvard.integration.HtmlBuilder;
+import ru.goodvard.services.MailRequestProcessor;
 
 import static ru.goodvard.entity.ParentUser.fromDto;
 import static ru.goodvard.entity.UserStatus.WANT_TO_GO;
@@ -43,11 +43,11 @@ public class MailRequestProcessorImpl implements MailRequestProcessor {
     }
 
     private void saveUser(SendEmailDto request) {
-        List<ParentUser> parentsByPhone = parentRepository.findAllByPhone(request.getPhone());
-        if (parentsByPhone.isEmpty()) saveDbUser(fromDto(request, WANT_TO_GO));
+        var parentsByPhone = parentRepository.findAllByPhone(request.getPhone());
+        if (parentsByPhone.isEmpty()) saveInDbUser(fromDto(request, WANT_TO_GO));
     }
 
-    private void saveDbUser(ParentUser user) {
+    private void saveInDbUser(ParentUser user) {
         try {
             parentRepository.save(user);
         } catch (Exception e) {
