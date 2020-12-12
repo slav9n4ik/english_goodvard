@@ -17,7 +17,7 @@ import static ru.goodvard.controller.dto.ResultDto.resultOf;
 @RestController
 @AllArgsConstructor
 public class RegistrationController {
-    private final RegistrationService registrationService;
+    private final RegistrationService registrationService123;
 
 //    @PutMapping("/registration")
 //    public ResponseEntity<ResultDto> registration(@RequestBody RegistrationDto request) {
