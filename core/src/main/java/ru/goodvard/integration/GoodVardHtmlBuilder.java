@@ -5,7 +5,7 @@ import org.springframework.core.io.Resource;
 import org.springframework.stereotype.Component;
 import ru.goodvard.controller.dto.SendEmailDto;
 
-import static ru.goodvard.FileUtils.readFromResource;
+import static ru.goodvard.utils.FileUtils.readFromResource;
 
 @Component
 public class GoodVardHtmlBuilder implements HtmlBuilder {

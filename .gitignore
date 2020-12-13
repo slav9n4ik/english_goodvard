@@ -1,3 +1,4 @@
 .idea
+.gradle
 ./core/.gradle
 ./core/build

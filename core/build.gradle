@@ -1,12 +1,16 @@
 plugins {
     id 'org.springframework.boot' version '2.4.0'
     id 'io.spring.dependency-management' version '1.0.10.RELEASE'
+    id "org.sonarqube" version "3.0"
     id 'java'
+    id 'application'
+    id 'jacoco'
 }
 
 group 'org.example'
 version '1.0-SNAPSHOT'
 sourceCompatibility = '11'
+mainClassName = "ru.goodvard.CoreStarter"
 
 configurations {
     compileOnly {
@@ -18,14 +22,33 @@ repositories {
     mavenCentral()
 }
 
+sonarqube {
+    properties {
+        property "sonar.projectKey", "slav9n4ik_english_goodvard"
+        property "sonar.organization", "slav9n4ik"
+        property "sonar.host.url", "https://sonarcloud.io"
+    }
+}
+
 dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
     implementation 'org.springframework.boot:spring-boot-starter-web'
     implementation 'org.flywaydb:flyway-core'
     implementation 'org.postgresql:postgresql'
+    implementation 'junit:junit:4.12'
+    implementation 'junit:junit:4.12'
     compileOnly 'org.projectlombok:lombok'
     annotationProcessor 'org.projectlombok:lombok'
-    testImplementation 'org.springframework.boot:spring-boot-starter-test'
+    testImplementation('org.springframework.boot:spring-boot-starter-test') {
+        exclude group: 'org.junit.vintage', module: 'junit-vintage-engine'
+    }
+}
+
+jacocoTestReport {
+    reports {
+        xml.enabled true
+        html.enabled true
+    }
 }
 
 test {
