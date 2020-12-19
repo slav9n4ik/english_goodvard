@@ -23,6 +23,7 @@ public class MailRequestController {
     @PostMapping("/api/send")
     public ResponseEntity<ResultDto> sendEmail(@RequestBody SendEmailDto emailDto) {
         log.info("Send email request");
-        return new ResponseEntity<>(resultOf(mailRequestProcessor.send(emailDto)), OK);
+        mailRequestProcessor.send(emailDto);
+        return new ResponseEntity<>(resultOf("SUCCESS"), OK);
     }
 }

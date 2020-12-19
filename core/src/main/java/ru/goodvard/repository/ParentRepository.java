@@ -1,7 +1,7 @@
 package ru.goodvard.repository;
 
 import org.springframework.data.jpa.repository.JpaRepository;
-import ru.goodvard.entity.ParentUser;
+import ru.goodvard.repository.entity.ParentUser;
 
 import java.util.List;
 

@@ -1,24 +1,27 @@
-CREATE TABLE child_user (
+CREATE TABLE parent_user (
     id int primary key not null,
-    name varchar(255) not null,
-    experience double precision,
-    ages int,
-    experience_in_current_school double precision,
+    name varchar(128) not null,
+    surname varchar(128),
+    middle_name varchar(128),
+    email varchar(128),
+    phone varchar(32) unique,
+    description varchar(1000),
+    status varchar(64),
+    subscribe boolean,
+    activation_code varchar(64),
+    activated boolean,
     update_time timestamp
 );
 
-CREATE TABLE parent_user (
+CREATE TABLE child_user (
     id int primary key not null,
-    name varchar(255) not null,
-    surname varchar(255),
-    middle_name varchar(255),
-    email varchar(255),
-    phone varchar(255) unique,
-    description varchar(1000),
-    status varchar(255),
-    child_id int,
-    subscribe boolean,
-    constraint child_user_fk foreign key (child_id) references child_user (id) on delete cascade
+    parent_id int,
+    name varchar(128) not null,
+    experience double precision,
+    ages int,
+    experience_in_current_school double precision,
+    update_time timestamp,
+    constraint parent_user_fk foreign key (parent_id) references parent_user (id) on delete cascade
 );
 
 CREATE TABLE video_order (

@@ -17,12 +17,11 @@ import static ru.goodvard.controller.dto.ResultDto.resultOf;
 @RestController
 @AllArgsConstructor
 public class RegistrationController {
-    private final RegistrationService registrationService123;
+    private final RegistrationService registrationService;
 
-//    @PutMapping("/registration")
-//    public ResponseEntity<ResultDto> registration(@RequestBody RegistrationDto request) {
-//        log.info("Registration request from: {} {}", request.getParentUser());
-//        String status = registrationService.registrate(request);
-//        return new ResponseEntity<>(resultOf(mailRequestProcessor.send(emailDto)), OK);
-//    }
+    @PutMapping("/registration")
+    public ResponseEntity<ResultDto> registration(@RequestBody RegistrationDto request) {
+        log.info("Registration request from: {} {}", request.getParentUserDto().getSurname(), request.getParentUserDto().getEmail());
+        return new ResponseEntity<>(resultOf(registrationService.makeRegistration(request)), OK);
+    }
 }

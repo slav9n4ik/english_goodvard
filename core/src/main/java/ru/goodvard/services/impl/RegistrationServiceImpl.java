@@ -1,17 +1,22 @@
 package ru.goodvard.services.impl;
 
-import org.springframework.http.ResponseEntity;
+import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 import ru.goodvard.controller.dto.RegistrationDto;
+import ru.goodvard.repository.EntityResolver;
 import ru.goodvard.services.RegistrationService;
 
-import static org.springframework.http.HttpStatus.OK;
+import static ru.goodvard.repository.entity.ParentUser.fromRegistrationDto;
 
 @Service
+@AllArgsConstructor
 public class RegistrationServiceImpl implements RegistrationService {
+    private final EntityResolver entityResolver;
+
     @Override
-    public String registrate(RegistrationDto request) {
+    public String makeRegistration(RegistrationDto request) {
+        entityResolver.saveParentUserIfNotExists(fromRegistrationDto(request));
+        //TODO Подтверди емейл
         return null;
-//        return new ResponseEntity<>(result, OK);
     }
 }

@@ -1,4 +1,4 @@
-package ru.goodvard.entity;
+package ru.goodvard.repository.entity;
 
 import lombok.Data;
 import lombok.NoArgsConstructor;

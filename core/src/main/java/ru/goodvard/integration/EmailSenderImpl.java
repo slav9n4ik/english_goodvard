@@ -19,6 +19,9 @@ import static ru.goodvard.integration.dto.MessageDto.mainMsgTemplateOf;
 @RequiredArgsConstructor
 public class EmailSenderImpl implements EmailSender {
 
+    @Value( "${main.mail.send}" )
+    private Boolean sendIsAvailable;
+
     @Value( "${main.mail.request.sender}" )
     private String from;
 
@@ -32,13 +35,15 @@ public class EmailSenderImpl implements EmailSender {
     private String mailUrl;
 
     public String sendToAdmin(String to, String subject, String htmlTemplate) {
+       log.info("Send message to Administrator subject: {}", subject);
        return sendHtmlText("Автоматическое письмо администратору", to, subject, htmlTemplate);
     }
 
     @Override
     public String sendHtmlText(String name, String to, String subject, String htmlTemplate) {
+        log.info("Send message to client subject: {}", subject);
         MessageList messageList = new MessageList(of(mainMsgTemplateOf(from, requestName, to, subject, htmlTemplate)));
-        return send(new RestTemplate(), new HttpEntity<>(messageList, makeHeader()));
+        return sendIfAvailable(new HttpEntity<>(messageList, makeHeader()));
     }
 
     private HttpHeaders makeHeader() {
@@ -48,9 +53,15 @@ public class EmailSenderImpl implements EmailSender {
         return headers;
     }
 
-    private String send(RestTemplate restTemplate, HttpEntity<MessageList> request) {
+    private String sendIfAvailable(HttpEntity<MessageList> request) {
+        log.info("SendIsAvailable: {}", sendIsAvailable);
+        if (sendIsAvailable) return send(request);
+        throw new SendMessageException("Отправка писем не доступна, значение параметра sendIsAvailable: false");
+    }
+
+    private String send(HttpEntity<MessageList> request) {
         try {
-            return restTemplate.postForObject(mailUrl, request, String.class);
+            return new RestTemplate().postForObject(mailUrl, request, String.class);
         } catch (Exception e) {
             log.error(e.getMessage());
             throw new SendMessageException(e.getMessage());
