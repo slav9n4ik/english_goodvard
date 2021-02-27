@@ -1,3 +1,4 @@
 rootProject.name = 'english_goodvard'
 include 'core'
+include 'frontend'
 

@@ -7,7 +7,7 @@ plugins {
     id 'jacoco'
 }
 
-group 'org.example'
+group 'ru.goodvard.frontend.core'
 version '1.0-SNAPSHOT'
 sourceCompatibility = '11'
 mainClassName = "ru.goodvard.CoreStarter"
