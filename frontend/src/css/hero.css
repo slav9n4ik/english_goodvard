@@ -1,0 +1,48 @@
+
+/* hero */
+
+.hero-container {
+    flex-direction: column;
+    background-image: url("../images/hero/hero-bg-mob.png");
+    background-size: cover;
+    background-position: left bottom;
+    height: 95vh;
+    width: 100%;
+}
+
+.header-info {
+    flex-direction: column;
+}
+
+.hero-header-container {
+    max-width: 270px;
+    margin: 0;
+    text-align: center;
+}
+
+.hero-header {
+    font-size: 1.4rem;
+    color: #121111;
+
+    text-transform: uppercase;
+    margin: 1.25em 0 0 0;
+}
+
+.hero-header p {
+    z-index: 10;
+}
+
+.link-btn {
+    display: none;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+.hero-image {
+    position: absolute;
+    opacity: 0.9;
+    width: 100%;
+    bottom: 0;
+    right: 0;
+    z-index: 5;
+}

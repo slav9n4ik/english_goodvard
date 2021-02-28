@@ -1,0 +1,280 @@
+@font-face {
+    font-family: Gilroy;
+    src: url(../fonts/GilroyLight.otf);
+}
+
+@font-face {
+    font-family: Gilroy;
+    src: url(../fonts/GilroyExtraBold.otf);
+    font-weight: bold;
+}
+
+* {box-sizing: border-box;}
+
+body {
+    margin: 0;
+    font-family: Gilroy, sans-serif;
+    font-size: 1rem;
+    color: #404040;
+    line-height: 1.6;
+}
+
+img {
+    max-width: 100%;
+}
+
+a {
+    text-decoration: none;
+}
+
+/* ==================
+    Typography
+===================== */
+
+h1, h2, h3, strong {
+    color: #000000;
+    text-align: center;
+    font-weight: bold;
+    letter-spacing: .05em;
+}
+
+.btn {
+    padding: 1em 2.5em;
+    border: 0;
+    cursor: pointer;
+}
+
+.btn-primary,
+.nav-link {
+    color: #fff;
+    text-decoration: none;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: .1em;
+}
+
+.btn-primary {
+    background-image: linear-gradient(#ED8108, #EC4103);
+    justify-self: start;
+    border-radius: 50px;
+}
+
+.btn-primary:hover,
+.btn-primary:focus {
+    background-image: linear-gradient(#FF2400, #FF2400);
+}
+
+.btn-form {
+    justify-self: end;
+}
+
+/* ==================
+    general layout
+===================== */
+.flex {
+    display: flex;
+    align-items: center;
+}
+
+.grid {
+    display: grid;
+    grid-column-gap: 0.2em;
+    grid-template-columns: 120px auto auto 120px;
+    grid-template-areas: 
+          "menu-btn     logo        logo     social "
+          "   .         phone       phone       .   "
+          "   .       course-btn  course-btn    .   "
+} 
+
+
+@media (min-height: 800px) {
+    .hero-header-container {
+        max-width: 275px;
+    }
+
+    .hero-image {
+        bottom: 10%;
+    }
+
+    .vk {
+        display: inline-block;
+    }
+}
+
+@media (min-height: 950px) {
+    .hero-header-container {
+        max-width: 350px;
+    }
+
+    .youtube {
+        display: inline-block;
+    }
+
+    .hero-image {
+        bottom: 0;
+    }
+}
+
+@media (max-height: 600px) {
+    .hero-header-container p {
+        display: none;
+    }
+
+    .hero-header-container {
+        max-width: 275px;
+    }
+
+    .hero-image {
+        bottom: 0;
+    }
+
+}
+
+@media (max-width: 380px) {
+    .grid {
+        grid-template-columns: 80px auto 80px;
+        grid-template-areas: 
+          "menu-btn     logo       social "
+          "   .         phone         .   "
+          "   .       course-btn      .   "
+    }
+
+    .open-nav {
+        padding: .5em .25em;
+    }
+}
+
+@media (max-width: 350px) {
+    .social-list {
+        justify-self: start;
+    }
+}
+
+@media (min-width: 780px) {
+    .grid {
+        grid-template-columns: minmax(1em, 15em) repeat(3, auto minmax(0.5em, 150px)) auto minmax(1em, 15em);
+        grid-column-gap: 2em;
+        grid-template-areas: 
+                " .  logo social social . course-btn course-btn phone . "
+                " nav  nav nav  nav nav   nav  nav nav nav "
+    }
+
+    .open-nav,
+    .menu-btn-container {
+        display: none;
+    }
+
+    .logo-container {
+        background-color: #fff;
+        margin: 0.25em 0;
+    }
+
+    .youtube,
+    .vk {
+        display: inline-block;
+    }
+
+    .nav {
+        position: relative;
+        left: 0;
+        width: 100%;
+        background-image: linear-gradient( #EC4103, #ED8108);
+        opacity: 1;
+        border-radius: 0;
+        margin: 0 auto;
+    }
+
+    .nav-list {
+        flex-direction: row;
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+
+    .nav-link {
+        font-weight: lighter;
+        font-size: 0.75em;
+    }
+
+    .phone-container,
+    .free-course-button,
+    .social-list {
+        margin: 0;
+    }
+
+    .free-course-button {
+        font-size: 0.75em;
+        width: 230px;
+    }
+
+    .hero-container {
+        background-image: url("../images/hero/hero-bg.png");
+        background-size: cover; 
+        background-position: center;
+        max-height: 75vh;
+    }
+
+    .hero-container img {
+        display: none;
+    }
+
+    .hero-header-container {
+        align-self: flex-start;
+        margin: auto 10em;
+        max-width: 300px;
+        text-align: start;
+    }
+
+    .hero-header-container p {
+        font-size: 1rem;
+    }
+
+    .hero-header {
+        font-size: 2rem;
+        text-align: start;
+    }
+
+    .link-btn {
+        display: block;
+        margin: 2em 0 10em 0;
+    }
+
+    .btn-primary {
+        font-size: 1rem;
+    }
+
+    .about-title {
+        margin-top: 1em;
+        margin-bottom: 2em;
+    }
+
+    .about-container {
+        background: transparent;
+    }
+
+    .about-container-content {
+        flex-direction: row;
+        justify-content: center;
+    }
+
+    .about-image {
+        order: -1;
+        justify-content: end;
+    }
+
+    .about-items-container {
+        margin: 0;
+    }
+}
+
+@media (min-width: 1200px) {
+    .hero-header-container {
+        margin: auto 20em;
+    }
+}
+
+@media (min-width: 2000px) {
+    .hero-container {
+        max-height: 100vh;
+        max-width: 100%;
+    }
+}
