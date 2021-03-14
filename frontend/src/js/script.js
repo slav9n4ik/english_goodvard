@@ -24,43 +24,75 @@ function currentSlide(n) {
   showSlides(slideIndex = n);
 }
 
+// mobile course slider
 function showSlides(n) {
   if (window.screen.width <= 700) {
-    var i;
-    var slides = document.getElementsByClassName("course-item");
-    var dots = document.getElementsByClassName("dot");
+    let containers = document.getElementsByClassName("courses-container");
+    let slides = document.getElementsByClassName("course-item");
+    let activeSlides = document.getElementsByClassName("course-item-active");
+    let dots = document.getElementsByClassName("dot");
+
     if (n > slides.length) {slideIndex = 1}
     if (n < 1) {slideIndex = slides.length}
 
-    for (i = 0; i < slides.length; i++) {
-        slides[i].style.display = "none";
+    if (slideIndex === 1 || slideIndex === 2) {
+      containers[0].style.display = "flex";
+      containers[1].style.display = "none";
+    } else {
+      containers[1].style.display = "flex";
+      containers[0].style.display = "none";
     }
-    for (i = 0; i < dots.length; i++) {
+
+    for (let i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";
+        activeSlides[i].style.display = "none";
+    }
+    for (let i = 0; i < dots.length; i++) {
         dots[i].className = dots[i].className.replace(" active", "");
     }
     slides[slideIndex-1].style.display = "flex";
+    activeSlides[slideIndex-1].style.display = "flex";
     dots[slideIndex-1].className += " active";
   } 
 }
 
-
-// Course more info
-function showMoreInfo(n) {
+// Course desktop more info
+function showMoreInfo(itemIndex) {
   let activeItems = document.getElementsByClassName("course-item-active");
-  let display = activeItems[n-1].style.display;
-  if (display === 'none' || display === undefined || display === '') {
-    activeItems[n-1].style.display = 'block';
-  } else {
-    activeItems[n-1].style.display = 'none';
-  }
-
   let items = document.getElementsByClassName("course-item");
+  let isActive = false;
+
   for (i = 0; i < items.length; i++) {
-    if (i != (n - 1)) {
-      console.log(items[i])
+    if (i != itemIndex) {
       items[i].style.maxHeight = '250px';
     } else {
       items[i].style.maxHeight = 'none';
     }
+    if (items[i].className.includes('active')) {
+      isActive = true;
+    }
+  }
+
+  if (items[itemIndex].className.includes('active') ) {
+    items[itemIndex].className = items[itemIndex].className.replace(" active", "");
+    items[itemIndex].style.borderRadius = '45px';
+    items[itemIndex].style.height = 'none';
+    items[itemIndex].style.backgroundColor = 'rgb(255, 255, 255, 0.8)';
+  } else {
+    if (!isActive) {
+      items[itemIndex].className += " active";
+      items[itemIndex].style.height = '260px';
+      items[itemIndex].style.borderRadius = '45px 45px 0 0';
+      items[itemIndex].style.backgroundColor = 'rgb(255, 255, 255, 1)';
+    }
+  }
+
+  let display = activeItems[itemIndex].style.display;
+  if (display === 'none' || display === undefined || display === '') {
+    if (!isActive) {
+      activeItems[itemIndex].style.display = 'flex';
+    }
+  } else {
+    activeItems[itemIndex].style.display = 'none';
   }
  }

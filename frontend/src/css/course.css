@@ -1,36 +1,35 @@
-.courses-container {
-    background-image: url("../images/courses/courses-bg.svg");
-    background-size: cover;
+.courses-main {
+    background-image: url("../images/courses/courses-bg.png");
+    background-size: 100% 100%;
     background-position: center;
-    min-width: 100%; 
-    min-height: 100%;
-}
-
-.course-main-title {
-    padding-top: 1.5em;
-    margin-bottom: 0;
-}
-
-.courses-grid {
-    margin-top: 7em;
 
     display: flex;
-    /* grid-template-columns: minmax(1em, 1fr) 7fr minmax(1em, 1fr); */
-}
-
-/* Hide the images by default */
-.course-item {
-    display: none;
-    max-width: 85%;
-    min-height: 615px;
-    margin: 0 auto;
-
     flex-direction: column;
     align-items: center;
 
-    /* grid-column: 2 / 3; */
+    min-height: 800px;
+}
+
+.course-main-title {
+    margin-bottom: 3em;
+}
+
+.courses-container {
+    max-width: 85%;
+    margin: 0 auto;
     background-color: #FFFFFF;
     border-radius: 45px;
+    min-height: 550px;
+
+    flex-direction: column;
+    align-items: center;
+}
+.course-item,
+.course-item-active {
+    display: none;
+
+    flex-direction: column;
+    align-items: center;
 }
 
 .img-container {
@@ -40,8 +39,8 @@
 }
 
 .course-img {
-    width: 175px;
-    height: 175px;
+    width: 155px;
+    height: 155px;
     margin-top: -2em;
 }
 
@@ -72,17 +71,20 @@
     font-weight: bold;
     letter-spacing: .05em;
     line-height: 1.6;
+    font-size: 0.9rem;
 
-    margin-bottom: 0;
+    margin: 0;
+    margin-top: 0.5em;
 }
 
 .course-ages {
     margin-bottom: 0;
     margin-top: 0;
+    font-size: 0.75rem;
 }
 
 .dot-group {
-    margin-top: -1.5em;
+    width: 100%;
 }
 
 .more-course-info-btn {
@@ -125,30 +127,37 @@
 }
 
 .course-item-active {
-    padding: 0 1em 1em 1em;
+    padding: 0 1em 1.2em 1em;
 }
 
 .profit-title {
-    margin-top: 0;
+    margin-top: 0.75rem;
     text-align: left;
 }
 
 .course-explanation, .course-profit-list {
     font-size: 0.75rem;
+    margin-bottom: 0;
 }
 
 .course-profit-list {
     padding-left: 0;
+    align-self: start;
     list-style: circle inside url("../images/courses/li-point.svg");
 }
 
 .course-link-btn {
-    display: block !important;
-    padding-top: 2em;
+    display: none;
+}
+
+.course-link-btn-bottom {
+    display: block;
+    margin-top: -2.5em;
+    margin-bottom: 3em;
     text-align: center;
 }
 
-/* .link-btn {
-    display: block !important;
-    margin: 2em 0 10em 0;
-} */
+.active-img {
+    display: none;
+}
+
