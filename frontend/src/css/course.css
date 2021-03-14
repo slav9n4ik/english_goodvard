@@ -1,0 +1,154 @@
+.courses-container {
+    background-image: url("../images/courses/courses-bg.svg");
+    background-size: cover;
+    background-position: center;
+    min-width: 100%; 
+    min-height: 100%;
+}
+
+.course-main-title {
+    padding-top: 1.5em;
+    margin-bottom: 0;
+}
+
+.courses-grid {
+    margin-top: 7em;
+
+    display: flex;
+    /* grid-template-columns: minmax(1em, 1fr) 7fr minmax(1em, 1fr); */
+}
+
+/* Hide the images by default */
+.course-item {
+    display: none;
+    max-width: 85%;
+    min-height: 615px;
+    margin: 0 auto;
+
+    flex-direction: column;
+    align-items: center;
+
+    /* grid-column: 2 / 3; */
+    background-color: #FFFFFF;
+    border-radius: 45px;
+}
+
+.img-container {
+   display: flex;
+   align-items: start;
+   justify-content: center;
+}
+
+.course-img {
+    width: 175px;
+    height: 175px;
+    margin-top: -2em;
+}
+
+/* Next & previous buttons */
+.prev, .next {
+    padding: 1em;
+    color: #ED8108;
+    font-weight: 400;
+    font-size: 1.5rem;
+    transition: 0.6s ease;
+    user-select: none;
+}
+
+/* Position the "next button" to the right */
+.next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover, .next:hover {
+    background-color: rgba(0,0,0,0.8);
+}
+
+.course-title {
+    text-transform: uppercase;
+    text-align: center;
+    font-weight: bold;
+    letter-spacing: .05em;
+    line-height: 1.6;
+
+    margin-bottom: 0;
+}
+
+.course-ages {
+    margin-bottom: 0;
+    margin-top: 0;
+}
+
+.dot-group {
+    margin-top: -1.5em;
+}
+
+.more-course-info-btn {
+    display: none;
+}
+
+/* The dots/bullets/indicators */
+.dot {
+    cursor: pointer;
+    height: 7px;
+    width: 7px;
+    margin: 0 2px;
+    background-color: transparent;
+    border: solid 1px #FFFFFF;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.8s ease;
+}
+
+.active, .dot:hover {
+    background-color: #FFFFFF;
+}
+
+/* Fading animation */
+.fade {
+    -webkit-animation-name: fade;
+    -webkit-animation-duration: 2.5s;
+    animation-name: fade;
+    animation-duration: 2.5s;
+}
+
+@-webkit-keyframes fade {
+    from {opacity: .4}
+    to {opacity: 1}
+}
+
+@keyframes fade {
+    from {opacity: .4}
+    to {opacity: 1}
+}
+
+.course-item-active {
+    padding: 0 1em 1em 1em;
+}
+
+.profit-title {
+    margin-top: 0;
+    text-align: left;
+}
+
+.course-explanation, .course-profit-list {
+    font-size: 0.75rem;
+}
+
+.course-profit-list {
+    padding-left: 0;
+    list-style: circle inside url("../images/courses/li-point.svg");
+}
+
+.course-link-btn {
+    display: block !important;
+    padding-top: 2em;
+    text-align: center;
+}
+
+/* .link-btn {
+    display: block !important;
+    margin: 2em 0 10em 0;
+} */

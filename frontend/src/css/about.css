@@ -8,8 +8,11 @@
     flex-direction: column;
 }
 
-.about-title {
+.title {
     text-transform: uppercase;
+}
+
+.about-title {
     margin-top: -2.5em;
 }
 
@@ -28,7 +31,7 @@
 }
 
 .about-item {
-    margin: 1.25em;
+    margin-left: 1.5em;
 }
 
 .about-item img {

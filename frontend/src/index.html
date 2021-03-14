@@ -5,6 +5,7 @@
     <title>Goodvard</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- link to my CSS -->
+    <link href="css/course.css" rel="stylesheet">
     <link href="css/about.css" rel="stylesheet">
     <link href="css/header.css" rel="stylesheet">
     <link href="css/hero.css" rel="stylesheet">
@@ -65,7 +66,7 @@
         </section>
 
         <section class='about-container'>
-            <h2 class='about-title'>О нас</h3>
+            <h2 class='title about-title'>О нас</h3>
             <div class='about-container-content flex'>
                 <div class="about-items-container about-grid">
                     <div class="about-item">
@@ -94,6 +95,163 @@
                 </div>
             </div>
         </section>
+
+        <section class='courses-container'>
+            <h2 class='title course-main-title'>Курсы</h2>
+
+            <div class="courses-grid">
+                <div class="course-item fade">
+                    <div class="img-container">
+                        <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+                        <img class='course-img' src='images/courses/pre-school.png' alt='pre-school'/>
+                        <a class="next" onclick="plusSlides(1)">&#10095;</a>
+                    </div>
+                    <h4 class='course-title'>Дошкольники</h5>
+                    <p class='course-ages'>от 4 лет</p>
+                    <p class="more-course-info-btn">
+                        <a class="down-arrow" onclick="showMoreInfo(1)"></a>
+                    </p>
+
+                    <div class='course-item-active'>
+                        <p class='course-explanation'>
+                            Увлекательная программа для детей <b>от 4-6 лет</b>, направленная на развитие чувства языка, а также социальных навыков и познавательных способностей.
+                        </p>
+                        <p class='course-explanation'>
+                            На занятиях мы играем, разучиваем песни, рисуем, фантазируем, участвуем в сценках и мастерим. 
+                            В такой творческой атмосфере дети быстро привыкают к иностранной речи, учатся общаться с ровесниками и развиваются как личности.
+                        </p>
+                        <h5 class='course-title profit-title'>Особенности курса:</h5>
+                        <ul class="course-profit-list">
+                            <li>Формирование базовых навыков обучения.</li>
+                            <li>Раннее обучение чтению, письму, восприятию на слух и устной речи.</li>
+                            <li>Развития внимания, памяти, логическго мышления.</li>
+                            <li>2 раза в неделю по 75 мин.</li>
+                        </ul>
+                        <p class="link-btn">
+                            <a class="btn btn-primary" href="#">Записаться на курс</a> 
+                        </p>
+                    </div>
+                </div>
+              
+                <div class="course-item fade">
+                    <div class="img-container">
+                        <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+                        <img class='course-img' src='images/courses/school.png' alt='school'/>
+                        <a class="next" onclick="plusSlides(1)">&#10095;</a>
+                    </div>
+                    <h4 class='course-title'>Школьники</h5>
+                    <p class='course-ages'>от 7 лет</p>
+                    <p class="more-course-info-btn">
+                        <a class="down-arrow" onclick="showMoreInfo(2)"></a>
+                    </p>
+
+                    <div class='course-item-active'>
+                        <p class='course-explanation'>
+                            Яркая и насыщенная программа, которая поможет школьникам улучшить оценки, углубить школьные знания, усовершенствовать разговорные навыки.
+                        </p>
+                        <p class='course-explanation'>
+                            Полное погружение в языковую среду. Быстрое расширение словарного запаса.
+                        </p>
+                        <h5 class='course-title profit-title'>Особенности курса:</h5>
+                        <ul class="course-profit-list">
+                            <li>Уверенное знание языка.</li>
+                            <li>90% разговорной практики.</li>
+                            <li>Расширение словарного запаса.</li>
+                            <li>2 раза в неделю по 75 мин.</li>
+                        </ul>
+                        <p class="link-btn">
+                            <a class="btn btn-primary" href="#">Записаться на курс</a> 
+                        </p>
+                    </div>
+                </div>
+
+                <div class="course-item fade">
+                    <div class="img-container">
+                        <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+                        <img class='course-img' src='images/courses/individual.png' alt='individual'/>
+                        <a class="next" onclick="plusSlides(1)">&#10095;</a>
+                    </div>
+                    <h4 class='course-title'>Индивидуальные</h5>
+                    <p class='course-ages'>от 6 лет</p>
+                    <p class="more-course-info-btn">
+                        <a class="down-arrow" onclick="showMoreInfo(3)"></a>
+                    </p>
+
+                    <div class='course-item-active'>
+                        <p class='course-explanation'>
+                            Хотите, чтобы преподаватель 100% времени уделял только Вашему ребёнку? Тогда индивидуальный курс - это то, что Вам необходимо. 
+                        </p>
+                        <p class='course-explanation'>
+                            Программа составляется с учётом интересов и целей, изначальных способностей и требованиям к занятиям. 
+                            Большее количество времени уделяется формированию разговорного навыка.
+                        </p>
+                        <h5 class='course-title profit-title'>Особенности курса:</h5>
+                        <ul class="course-profit-list">
+                            <li>Закрепление школьной программы.</li>
+                            <li>Проработка навыков чтения, письма, аудирования.</li>
+                            <li>90% разговорной практики.</li>
+                            <li>2 раза в неделю по 60 мин.</li>
+                        </ul>
+                        <p class="link-btn">
+                            <a class="btn btn-primary" href="#">Записаться на курс</a> 
+                        </p>
+                    </div>
+                </div>
+
+                <div class="course-item fade">
+                    <div class="img-container">
+                        <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+                        <img class='course-img' src='images/courses/garden.png' alt='garden'/>
+                        <a class="next" onclick="plusSlides(1)">&#10095;</a>
+                    </div>
+                    <h4 class='course-title'>Детский садик</h5>
+                    <p class='course-ages'>от 4 лет</p>
+                    <p class="more-course-info-btn">
+                        <a class="down-arrow" onclick="showMoreInfo(4)"></a>
+                    </p>
+                    
+                    <div class='course-item-active'>
+                        <p class='course-explanation'>
+                            Специально разработанная программа <b>для детей от 4-х лет.</b> Увлекательный английский с песнями, театром, поделками, танцами и играми. 
+                        </p>
+                        <p class='course-explanation'>
+                            Ребята научатся общаться, читать, играть на изучаемом языке. 
+                            Программа поможет Вашему ребенку полюбить английский, освоить <b>более 500 базовых слов</b> и успешно подготовиться к школе.
+                        </p>
+                        <h5 class='course-title profit-title'>Особенности курса:</h5>
+                        <ul class="course-profit-list">
+                            <li>Игровой формат занятий, красочные учебные материалы.</li>
+                            <li>Раннее обучение чтению, письму, восприятию на слух и устной речи.</li>
+                            <li>Полезные упражнения для развития мелкой моторики, внимания, памяти и логического мышления.</li>
+                            <li>3 раза в неделю по 4 часа</li>
+                        </ul>
+                        <p class="link-btn">
+                            <a class="btn btn-primary" href="#">Записаться на курс</a> 
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <br>
+              
+            <!-- The dots/circles -->
+            <div class='dot-group' style="text-align:center">
+                <span class="dot" onclick="currentSlide(1)"></span>
+                <span class="dot" onclick="currentSlide(2)"></span>
+                <span class="dot" onclick="currentSlide(3)"></span>
+                <span class="dot" onclick="currentSlide(4)"></span>
+            </div>
+
+            <p class="course-link-btn link-btn">
+                <a class="btn btn-primary" href="#">Записаться на курс</a> 
+            </p>
+
+        </section>
+
+        <section class='мшвущ-courses-container'>
+            <h2 class='title'>Видеоурсы</h2>
+        </section>
+
+
     </main>
 
     <footer class="">

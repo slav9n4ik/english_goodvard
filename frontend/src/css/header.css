@@ -1,4 +1,13 @@
 /* navigation */
+.grid {
+    display: grid;
+    grid-column-gap: 0.2em;
+    grid-template-columns: 120px auto auto 120px;
+    grid-template-areas: 
+          "menu-btn     logo        logo     social "
+          "   .         phone       phone       .   "
+          "   .       course-btn  course-btn    .   "
+} 
 
 .header {
     background: transparent;
