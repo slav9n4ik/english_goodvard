@@ -152,6 +152,9 @@ h1, h2, h3, strong {
     .courses-section {
         background-size: 120% 120%;
     }
+    .courses-main {
+        min-height: 850px;
+    }
 }
 
 @media (min-width: 700px) {
@@ -185,6 +188,19 @@ h1, h2, h3, strong {
 
     .courses-main {
         background-image: url("../images/courses/course-main-bg.png");
+        min-height: 800px;
+    }
+
+    .swiper-wrapper-desktop {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .swiper-slide { 
+        flex-shrink: inherit;
+        padding-top: 5em;
+        margin: 0 3em;
     }
 
     .courses-container {
@@ -200,31 +216,50 @@ h1, h2, h3, strong {
         justify-content: space-around; 
     }
 
-    .course-item-active, 
     .dot-group, 
-    .prev, .next {
+    .swiper-button-prev, 
+    .swiper-button-next,
+    .course-item-active {
         display: none;
     }
 
     .course-item-active {
-        background-color: rgb(255, 255, 255, 1);
+        position: relative;
+        flex-direction: column;
+        width: 90%;
+        margin: 0 auto;
+        margin-bottom: 5em;
+        background-color: #fff;
         border-radius: 45px;
         padding: 2em;
-        flex-direction: row;
 
-        position: relative;
+        animation-name: open;
+        animation-duration: 0.05s;
+        animation-delay: 0s;
+    }
+
+    @keyframes open {
+        0% {
+          display: block;
+          opacity: 0;
+          visibility: hidden;
+        }
+        100% {
+          display: block;
+          opacity: 1;
+          visibility: visible;
+        }
     }
 
     .active-main-content {
-        width: 65%;
+        width: 60%;
         margin-right: auto;
     }
 
     .active-img {
-        display: block;
         width: 30%; 
         position: absolute;
-        bottom: -8px;
+        bottom: 0;
         right: 20%;
         z-index: 0;
     }
@@ -241,14 +276,39 @@ h1, h2, h3, strong {
         display: flex;
         background-color: rgb(255, 255, 255, 0.8);
         border-radius: 45px;
-        padding: 0 1em;
+        padding: 0;
         min-width: 250px;
         height: 250px;
+        min-height: auto;
+        max-width: 75%;
+
+        animation-name: open-item;
+        animation-duration: 0.01s;
+        animation-iteration-count: 1;
+        animation-direction: normal;
+        animation-timing-function: ease-out;
+        animation-fill-mode: forwards;
+        animation-delay: 0s;
+    }
+
+    @keyframes open-item {
+        0% {
+          opacity: 0;
+          visibility: hidden;
+        }
+        100% {
+          opacity: 1;
+          visibility: visible;
+        }
     }
 
     .course-active {
         background-color: rgb(255, 255, 255, 1);
         border-radius: 45px 45px 0 0;
+
+        -webkit-transition: background-color 200ms ease-out;
+        -ms-transition: background-color 200ms ease-out;
+        transition: background-color 200ms ease-out;
     }
 
     .course-img {
@@ -257,7 +317,7 @@ h1, h2, h3, strong {
     }
 
     .course-ages {
-        margin-bottom: 0.5em;
+        margin-bottom: 1.5em;
     }
 
     .course-title {
@@ -279,7 +339,7 @@ h1, h2, h3, strong {
     .more-course-info-btn {
         display: block;
         margin: 0;
-        margin-bottom: 1em;
+        margin-bottom: 1.75em;
         min-width: 40px;
         min-height: 40px;
         border-radius: 50px;
@@ -404,17 +464,22 @@ h1, h2, h3, strong {
         font-size: 1rem;
     }
 
+    .courses-main {
+        min-height: 950px;
+    }
+
+    .swiper-slide { 
+        flex-shrink: inherit;
+        margin: 0 5em;
+    }
+
     .courses-row {
         justify-content: center;
     }
 
     .course-item {
-        margin: 0 2em;
-    }
-
-    .course-item {
-        min-width: 310px;
-        min-height: 330px;
+        min-width: 350px;
+        height: 330px;
     }
 
     .course-img {
@@ -423,18 +488,18 @@ h1, h2, h3, strong {
     }
 
     .course-title {
-        font-size: 1.5rem;
+        font-size: 1.25rem;
     }
 
     .course-ages {
-        font-size: 1.25rem;
+        font-size: 1rem;
         margin-bottom: 1em;
     }
 
     .course-explanation,
     .course-profit-list {
         margin-top: 1em;
-        font-size: 1.125rem;
+        font-size: 1rem;
     }
 
     .course-profit-list {
@@ -447,7 +512,7 @@ h1, h2, h3, strong {
     }
 
     .active-img {
-        width: 60%;
+        width: 70%;
         right: -15%;
     }
 }
@@ -459,16 +524,20 @@ h1, h2, h3, strong {
 
     .course-item-active {
         max-width: 80%;
-        margin: auto;
     }
 
     .courses-main {
-        min-height: 1200px;
+        min-height: 1000px;
     }
 
     .course-main-title {
         margin-top: 6em;
         margin-bottom: 2em;
+    }
+
+    .active-img {
+        width: 45%;
+        right: -10%;
     }
 }
 
