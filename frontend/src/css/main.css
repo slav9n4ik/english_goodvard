@@ -155,6 +155,10 @@ h1, h2, h3, strong {
     .courses-main {
         min-height: 850px;
     }
+    .course-item {
+        max-width: 85%;
+        padding: 1.25em;
+    }
 }
 
 @media (min-width: 700px) {
@@ -182,13 +186,12 @@ h1, h2, h3, strong {
     }
 
     .course-main-title {
-        margin-top: 3em;
         margin-bottom: 1em;
     }
 
     .courses-main {
         background-image: url("../images/courses/course-main-bg.png");
-        min-height: 800px;
+        background-size: 100% 100%;
     }
 
     .swiper-wrapper-desktop {
@@ -200,7 +203,7 @@ h1, h2, h3, strong {
     .swiper-slide { 
         flex-shrink: inherit;
         padding-top: 5em;
-        margin: 0 3em;
+        margin: 0 1em;
     }
 
     .courses-container {
@@ -275,7 +278,7 @@ h1, h2, h3, strong {
     .course-item {
         display: flex;
         background-color: rgb(255, 255, 255, 0.8);
-        border-radius: 45px;
+        border-radius: 25px;
         padding: 0;
         min-width: 250px;
         height: 250px;
@@ -340,21 +343,29 @@ h1, h2, h3, strong {
         display: block;
         margin: 0;
         margin-bottom: 1.75em;
-        min-width: 40px;
-        min-height: 40px;
+        min-width: 35px;
+        min-height: 35px;
         border-radius: 50px;
         background-color: #fff;
     }
 
+    .more-course-info-btn:hover {
+        box-shadow: 0 0 10px rgba(0,0,0,0.15);
+    }
+
     .down-arrow {
         display: block;
-        margin: 10px auto;
-        border-right: 3px solid;
-        border-bottom: 3px solid;
-        height: 16px;
-        width: 16px;
+        margin: 8px auto;
+        border-right: 2px solid;
+        border-bottom: 2px solid;
+        height: 12px;
+        width: 12px;
         transform: rotate(45deg);
         color: #ED8108;
+    }
+
+    .down-arrow:hover {
+        margin: 12px auto;
     }
 
     .course-profit-list {
@@ -464,42 +475,17 @@ h1, h2, h3, strong {
         font-size: 1rem;
     }
 
-    .courses-main {
-        min-height: 950px;
-    }
-
-    .swiper-slide { 
-        flex-shrink: inherit;
-        margin: 0 5em;
-    }
-
     .courses-row {
         justify-content: center;
     }
 
-    .course-item {
-        min-width: 350px;
-        height: 330px;
-    }
-
-    .course-img {
-        width: 200px;
-        height: 200px;
-    }
-
-    .course-title {
-        font-size: 1.25rem;
-    }
-
     .course-ages {
-        font-size: 1rem;
         margin-bottom: 1em;
     }
 
     .course-explanation,
     .course-profit-list {
         margin-top: 1em;
-        font-size: 1rem;
     }
 
     .course-profit-list {
@@ -512,8 +498,7 @@ h1, h2, h3, strong {
     }
 
     .active-img {
-        width: 70%;
-        right: -15%;
+        right: 10%;
     }
 }
 
@@ -523,21 +508,15 @@ h1, h2, h3, strong {
     }
 
     .course-item-active {
-        max-width: 80%;
-    }
-
-    .courses-main {
-        min-height: 1000px;
+        max-width: 50%;
     }
 
     .course-main-title {
-        margin-top: 6em;
-        margin-bottom: 2em;
+        margin-top: 2em;
     }
 
     .active-img {
-        width: 45%;
-        right: -10%;
+        width: 40%;
     }
 }
 
@@ -548,6 +527,6 @@ h1, h2, h3, strong {
     }
 
     .course-item-active {
-        max-width: 55%;
+        max-width: 45%;
     }
 }
