@@ -11,27 +11,27 @@ menuButton.addEventListener("click", () => {
 
 // Courses
 if (window.screen.width <= 700) {
-  var swiper = new Swiper('.swiper-container', {
+  var swiper = new Swiper('.course-swiper-container', {
     pagination: {
-      el: '.swiper-pagination',
+      el: '.course-swiper-pagination',
       type: 'bullets',
     },
     navigation: {
-      nextEl: '.swiper-button-next',
-      prevEl: '.swiper-button-prev',
+      nextEl: '.course-swiper-button-next',
+      prevEl: '.course-swiper-button-prev',
     }
   });
 } else {
-  let swiperWrapper = $(".swiper-wrapper")[0];
+  let swiperWrapper = $(".course-swiper-wrapper")[0];
   swiperWrapper.className = swiperWrapper.className.replace("swiper-wrapper", "swiper-wrapper-desktop");
   let activeMainContents = $(".course-item-active");
-  let swiperSlides = $(".swiper-slide");
+  let swiperSlides = $(".course-swiper-slide");
   let coursesRow = $(".courses-row");
   $(".course-item-active").detach();
-  $(".swiper-slide").detach();
+  $(".course-swiper-slide").detach();
   $(".courses-row").detach();
 
-  //stupid hardcode
+  //TODO dummy hardcode
   swiperWrapper.append(coursesRow[0]);
   swiperWrapper.append(activeMainContents[0]);
   swiperWrapper.append(activeMainContents[1]);
@@ -82,4 +82,123 @@ function closeCourseBlock(i, offsetHeight) {
     activeItems[i].style.display = 'none';
     activeImages[i].style.display = 'none';
     arrows[i].style.display = 'block';
+}
+
+
+//video-course
+var swiperVideoCourse = new Swiper('.video-course-swiper-container', {
+  navigation: {
+    nextEl: '.video-course-swiper-button-next',
+    prevEl: '.video-course-swiper-button-prev'
+  },
+  breakpoints: {
+    760: {
+      slidesPerView: 2,
+      spaceBetween: 4
+    }
+  }
+});
+
+function showMoreCourseInfo(item) {
+  var videoCourseContent = $(".video-course-content-" + item);
+  console.log(videoCourseContent)
+
+  for (let i = 0; i < videoCourseContent.length; i++) {
+    if (videoCourseContent[i].style.maxHeight === null ||  
+    videoCourseContent[i].style.maxHeight === '') {  
+      videoCourseContent[i].style.maxHeight = videoCourseContent[i].scrollHeight + "px";
+    } else {
+      videoCourseContent[i].style.maxHeight = null;
+    }
+  }
+}
+
+function showCourseDialogInfo(item) {
+  $('#videoCourseModal-1').modal();
+}
+
+
+//video section
+var galleryThumbs = new Swiper('.video-gallery-thumbs', {
+  spaceBetween: 15,
+  slidesPerView: 2,
+  freeMode: true,
+  watchSlidesVisibility: true,
+  watchSlidesProgress: true,
+  pagination: {
+    el: '.video-swiper-pagination',
+    type: 'bullets',
+  },
+  navigation: {
+    nextEl: '.video-swiper-button-next',
+    prevEl: '.video-swiper-button-prev',
+  },
+  breakpoints: {
+    760: {
+      slidesPerView: 3,
+      direction: 'vertical',
+    }
+  }
+});
+
+var galleryTop = new Swiper('.video-gallery-top', {
+  spaceBetween: 10,
+  slidesPerView: 1,
+  thumbs: {
+    swiper: galleryThumbs
+  }
+});
+
+$('.video').parent().click(function () {
+  if($(this).children(".video").get(0).paused){
+      $(this).children(".video").get(0).play();
+      $(this).children(".video").attr("controls", "controls");
+      $(this).children(".playpause").fadeOut();
+  }else{
+     $(this).children(".video").get(0).pause();
+     $(this).children(".video").removeAttr("controls");
+      $(this).children(".playpause").fadeIn();
+  }
+});
+
+//gallery
+var gallerySwiper = new Swiper(".gallery-container", {
+  effect: "coverflow",
+  grabCursor: true,
+  centeredSlides: true,
+  slidesPerView: 2,
+  loop: true,
+  coverflowEffect: {
+    rotate: 50,
+    stretch: 10,
+    depth: 100,
+    modifier: 1,
+    slideShadows: false,
+  },
+  navigation: {
+    nextEl: '.gallery-swiper-button-next',
+    prevEl: '.gallery-swiper-button-prev',
+  },
+});
+
+//team
+var swiperTeam = new Swiper('.team-container', {
+  navigation: {
+    nextEl: '.team-swiper-button-next',
+    prevEl: '.team-swiper-button-prev'
+  }
+});
+
+var coll = $(".team-more-btn");
+
+for (let i = 0; i < coll.length; i++) {
+  coll[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+    var content = $(".team-more-information")[i];
+    if (content.style.display === "block") {
+      content.style.display = "none";
+    } else {
+      content.style.display = "block";
+    }
+  });
 }

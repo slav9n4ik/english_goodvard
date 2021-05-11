@@ -40,13 +40,13 @@
 }
 
 /* Next & previous buttons */
-.swiper-button-prev:after, 
-.swiper-button-next:after {
+.course-swiper-button-prev:after, 
+.course-swiper-button-next:after {
     color: #ED8108;
     font-size: 1.5rem;
 }
-.swiper-button-prev, 
-.swiper-button-next {
+.course-swiper-button-prev, 
+.course-swiper-button-next {
     position: relative;
     margin-top: 1em;
 }
@@ -75,12 +75,13 @@
 }
 
 /* The dots/bullets/indicators */
-.swiper-pagination {
+.pagination {
     position: relative;
     margin-top: 0.5em;
+    text-align: center;
 }
 
-.swiper-pagination span {
+.pagination span {
     cursor: pointer;
     height: 7px;
     width: 7px;

@@ -1,0 +1,119 @@
+.video-section-title {
+    margin-top: 2em;
+}
+
+.video-container {
+    background-image: url(../images/video/video-bg-mobile.png);
+    background-size: 100% 97%;
+    background-position: 100% 100%;
+    background-repeat: no-repeat;
+}
+
+.thumbs-container {
+    justify-content: center;
+    margin-top: 0.5em;
+}
+
+.video-swiper-container {
+    min-height: 650px;
+}
+
+.swiper-video-slide {
+    padding: 0 !important;
+}
+
+.video-slide {
+    padding: 0 !important;
+    justify-content: center;
+    flex-direction: column;
+    
+    border: 1px solid #ED8108;
+    border-radius: 25px;
+    background-color: rgba(255, 255, 255, 0.3);
+    max-height: 280px;
+
+    width: 80%;
+    margin: 0 auto;
+}
+
+.video {
+    min-width: 240px;
+    max-height: 180px;
+    margin: 0 auto;
+    border-radius: 15px;
+}
+
+.video-wrapper{
+    display: flex;
+    width: 85%;
+    margin: 1em;
+    margin-bottom: 0em;
+    position: relative;
+}
+
+.playpause {
+    background-image: url(../images/video/play-button.svg);
+    background-repeat: no-repeat;
+    width: 20%;
+    height: 20%;
+    position: absolute;
+    left: 0%;
+    right: 0%;
+    top: 0%;
+    bottom: 0%;
+    margin: auto;
+    background-size: contain;
+    background-position: center;
+}
+
+.video-explanation {
+    max-width: 85%;
+    font-size: 0.6rem;
+    padding: 0.5em;
+    margin-bottom: 1em;
+    text-align: center;
+}
+
+.video-swiper-button-next, 
+.video-swiper-button-prev {
+    position: relative;
+    margin: 0 1em !important;
+    background: white;
+    border-radius: 50%;
+    left: 0 !important;
+
+    height: 28px;
+    width: 28px;
+}
+
+.video-swiper-button-next::after, 
+.video-swiper-button-prev::after {
+    color: #ED8108;
+    font-size: 1rem;
+}
+
+.video-gallery-thumbs {
+    display: flex;
+    align-items: center;
+    height: 50px;
+    width: 50%;
+    margin: 1em 0;
+}
+
+.video-gallery-thumbs-img {
+    border-radius: 7px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 50px;
+    width: 100%;
+}
+
+.video-swiper-pagination {
+    margin: 0 !important;
+    padding-bottom: 2em;
+}
+
+.video-details {
+    display: none;
+}

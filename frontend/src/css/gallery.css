@@ -1,0 +1,37 @@
+.gallery-main-content {
+    position: relative;
+}
+
+.gallery-img {
+    border-radius: 7px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    /* box-shadow: 0 0 35px #ED8108; */
+}
+
+.swiper-gallery-slide {
+    padding: 0 !important;
+}
+
+.gallery-swiper-button-next, 
+.gallery-swiper-button-prev {
+    margin-left: auto !important;
+    margin-right: auto !important;
+    background: white;
+    border-radius: 50%;
+
+    height: 28px;
+    width: 28px;
+}
+
+.gallery-swiper-button-next::after, 
+.gallery-swiper-button-prev::after {
+    color: #ED8108;
+    font-size: 1rem;
+}
+
+.video-link-btn {
+    text-align: center;
+    margin-top: 2em;
+}

@@ -1,0 +1,140 @@
+.video-course-section-title {
+    margin-top: 3em;
+}
+
+.video-course-swiper-container {
+    max-width: 800px;
+}
+
+.video-courses-container {
+    background-image: url(../images/video-course/video-courses-bg.png);
+    background-size: 170% 100%;
+    background-position: 70% 100%;
+    position: relative;
+}
+
+.video-swiper-slide {
+    padding-top: 0 !important;
+    padding: 0 0.5em;
+}
+
+.video-course-item {
+    margin: 0 auto;
+    width: 70%;
+    border: 1px solid #ED8108;
+    border-radius: 75px;
+
+    flex-direction: column;
+}
+
+.video-course-swiper-button-prev:after, 
+.video-course-swiper-button-next:after {
+    color: #ED8108;
+    font-size: 1.125rem;
+}
+
+.video-course-swiper-button-prev, 
+.video-course-swiper-button-next {
+    position: relative;
+    margin-top: 1em;
+}
+
+.video-course-icon {
+    margin: 2em 0 1em 0;
+    width: 80px;
+    height: auto;
+}
+
+.separator-solid {
+    border-top: 1px solid rgb(187, 187, 187, 0.2);
+    width: 150px;
+}
+
+.video-course-description,
+.course-discont,
+.video-course-title,
+.course-price {
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 0.5rem;
+    text-align: center;
+}
+
+.video-course-title {
+    font-size: 1rem;
+    margin-bottom: 3em;
+}
+
+.video-course-price {
+    margin: 1.5em 0;
+    width: 45%;
+}
+
+.course-discont {
+    font-weight: normal;
+    text-align: right;
+    text-decoration: line-through;
+    font-size: 0.75rem;
+    margin: 0;
+}
+
+.course-price {
+    margin-top: -0.175em;
+    margin-bottom: 0;
+    font-size: 1.5rem;
+}
+
+.video-course-link-btn-bottom {
+    display: block;
+    margin-bottom: 2em;
+    text-align: center;
+}
+
+.video-course-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.25s ease-out;
+
+    margin: 0 auto;
+    width: 70%;
+
+    font-size: 0.75rem;
+    text-align: center;
+}
+
+    /* свойства для заголовка модального окна */
+    .modal-header {
+      display: -webkit-box;
+      display: -webkit-flex;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-align: center;
+      -webkit-align-items: center;
+      -ms-flex-align: center;
+      align-items: center;
+      -webkit-box-pack: justify;
+      -webkit-justify-content: space-between;
+      -ms-flex-pack: justify;
+      justify-content: space-between;
+      padding: 15px;
+      border-bottom: 1px solid #eceeef;
+    }
+
+    .modal-title {
+      margin-top: 0;
+      margin-bottom: 0;
+      line-height: 1.5;
+      font-size: 1.25rem;
+      font-weight: 500;
+    }
+
+    /* свойства для блока, содержащего основное содержимое окна */
+    .modal-body {
+      position: relative;
+      -webkit-box-flex: 1;
+      -webkit-flex: 1 1 auto;
+      -ms-flex: 1 1 auto;
+      flex: 1 1 auto;
+      padding: 15px;
+      overflow: auto;
+    }
