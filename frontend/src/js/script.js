@@ -99,29 +99,40 @@ var swiperVideoCourse = new Swiper('.video-course-swiper-container', {
   }
 });
 
-function showMoreCourseInfo(item) {
-  var videoCourseContent = $(".video-course-content-" + item);
-  console.log(videoCourseContent)
-
-  for (let i = 0; i < videoCourseContent.length; i++) {
-    if (videoCourseContent[i].style.maxHeight === null ||  
-    videoCourseContent[i].style.maxHeight === '') {  
-      videoCourseContent[i].style.maxHeight = videoCourseContent[i].scrollHeight + "px";
-    } else {
-      videoCourseContent[i].style.maxHeight = null;
-    }
+function showMoreCourseInfoOnSlide(block) {
+  if (block === 1) {
+    showMoreCourseInfo(1);
+    showMoreCourseInfo(2);
+  } else {
+    showMoreCourseInfo(3);
+    showMoreCourseInfo(4);
   }
 }
 
-function showCourseDialogInfo(item) {
-  $('#videoCourseModal-1').modal();
+function showMoreCourseInfo(item) {
+  var videoCourseContent = $(".video-course-content-" + item)[0];
+  if (videoCourseContent.style.maxHeight === null ||  
+  videoCourseContent.style.maxHeight === '') {  
+    videoCourseContent.style.maxHeight = videoCourseContent.scrollHeight + "px";
+  } else {
+    closeMoreCourseInfo(item);
+  }
+}
+
+function closeMoreCourseInfo(item) {
+  let content = $(".video-course-content-" + item)[0];
+  content.style.maxHeight = null;
+}
+
+function closeAllCourseInfo(block) {
+  showMoreCourseInfoOnSlide(block)
 }
 
 
 //video section
 var galleryThumbs = new Swiper('.video-gallery-thumbs', {
   spaceBetween: 15,
-  slidesPerView: 2,
+  slidesPerView: 3,
   freeMode: true,
   watchSlidesVisibility: true,
   watchSlidesProgress: true,
@@ -169,11 +180,16 @@ var gallerySwiper = new Swiper(".gallery-container", {
   slidesPerView: 2,
   loop: true,
   coverflowEffect: {
-    rotate: 50,
+    rotate: 70,
     stretch: 10,
     depth: 100,
     modifier: 1,
     slideShadows: false,
+  },
+  breakpoints: {
+    760: {
+      spaceBetween: 5
+    }
   },
   navigation: {
     nextEl: '.gallery-swiper-button-next',
@@ -183,6 +199,16 @@ var gallerySwiper = new Swiper(".gallery-container", {
 
 //team
 var swiperTeam = new Swiper('.team-container', {
+  breakpoints: {
+    750: {
+      spaceBetween: 1,
+      slidesPerView: 2
+    },
+    1200: {
+      spaceBetween: 20,
+      slidesPerView: 3
+    }
+  },
   navigation: {
     nextEl: '.team-swiper-button-next',
     prevEl: '.team-swiper-button-prev'
@@ -190,7 +216,6 @@ var swiperTeam = new Swiper('.team-container', {
 });
 
 var coll = $(".team-more-btn");
-
 for (let i = 0; i < coll.length; i++) {
   coll[i].addEventListener("click", function() {
     this.classList.toggle("active");
@@ -202,3 +227,37 @@ for (let i = 0; i < coll.length; i++) {
     }
   });
 }
+
+swiperTeam.on('slideChange', function () {
+  for (let i = 0; i < coll.length; i++) {
+    var content = $(".team-more-information")[i];
+    content.style.display = "none";
+  }
+});
+
+//comments
+var commentGalleryThumbs = new Swiper('.comments-gallery-top', {
+  slidesPerView: 1
+});
+var commentMoreBtn = $(".comment-more-btn");
+for (let i = 0; i < commentMoreBtn.length; i++) {
+  commentMoreBtn[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+    var content = $(".comment-more-info")[i];
+    if (content.style.display === "block") {
+      content.style.display = "none";
+    } else {
+      content.style.display = "block";
+    }
+  });
+}
+commentGalleryThumbs.on('slideChange', function () {
+  for (let i = 0; i < coll.length; i++) {
+    var content = $(".comment-more-info")[i];
+    content.style.display = "none";
+  }
+});
+
+
+
+

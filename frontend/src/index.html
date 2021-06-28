@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.css" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css" />
     <!-- link to my CSS -->
+    <link href="css/comments.css" rel="stylesheet">
     <link href="css/team.css" rel="stylesheet">
     <link href="css/gallery.css" rel="stylesheet">
     <link href="css/video.css" rel="stylesheet">
@@ -297,7 +298,7 @@
             <h2 class='title video-course-section-title'>Видеокурсы</h2>
             <div class="swiper-container video-course-swiper-container">
                 <div class="swiper-wrapper">
-                    <div class="swiper-slide video-swiper-slide flex">
+                    <div class="swiper-slide video-swiper-slide flex" onclick="showMoreCourseInfoOnSlide(1)">
                         <div class="swiper-button-prev video-course-swiper-button-prev"></div>
                         <div class="video-course-item flex">
                             <img src="./images/video-course/course-icon-1.png" class='video-course-icon'
@@ -306,22 +307,22 @@
                                 Для новеньких
                             </p>
                             <div class="separator-solid"></div>
-                            <p class='video-course-description' onclick="showMoreCourseInfo(1)">
+                            <p class='video-course-description'>
                                 О курсе
                             </p>
                             <div class="video-course-content video-course-content-1">
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
+                                <p> О курсе Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
                                     incididunt ut labore et dolore magna aliqua.
                                     Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
                                     ex ea commodo consequat.
                                 </p>
                             </div>
                             <div class="separator-solid"></div>
-                            <p class='video-course-description' onclick="showMoreCourseInfo(2)">
+                            <p class='video-course-description'>
                                 Особенности курса
                             </p>
                             <div class="video-course-content video-course-content-2">
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
+                                <p>Особенности курса Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
                                     incididunt ut labore et dolore magna aliqua.
                                     Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
                                     ex ea commodo consequat.
@@ -333,13 +334,15 @@
                                 <p class='course-discont'>2000 &#8381;</p>
                                 <p class='course-price'>1200 &#8381;</p>
                             </div>
-                            <p class="video-course-link-btn-bottom">
-                                <a class="btn btn-primary" href="#videoCourseModal-1" rel="modal:open">Узнать больше</a>
+                            <p class="video-course-link-btn-bottom" onclick="closeAllCourseInfo(1)">
+                                <a class="btn btn-primary" href="#videoCourseModal-1" rel="modal:open">
+                                    Узнать больше
+                                </a>
                             </p>
                         </div>
                         <div class="swiper-button-next video-course-swiper-button-next"></div>
                     </div>
-                    <div class="swiper-slide video-swiper-slide flex">
+                    <div class="swiper-slide video-swiper-slide flex" onclick="showMoreCourseInfoOnSlide(2)">
                         <div class="swiper-button-prev video-course-swiper-button-prev"></div>
                         <div class="video-course-item flex">
                             <img src="./images/video-course/course-icon-2.png" class='video-course-icon'
@@ -348,7 +351,7 @@
                                 Для продолжающих
                             </p>
                             <div class="separator-solid"></div>
-                            <p class='video-course-description' onclick="showMoreCourseInfo(3)">
+                            <p class='video-course-description'>
                                 О курсе
                             </p>
                             <div class="video-course-content video-course-content-3">
@@ -359,7 +362,7 @@
                                 </p>
                             </div>
                             <div class="separator-solid"></div>
-                            <p class='video-course-description' onclick="showMoreCourseInfo(4)">
+                            <p class='video-course-description'>
                                 Особенности курса
                             </p>
                             <div class="video-course-content video-course-content-4">
@@ -375,8 +378,10 @@
                                 <p class='course-discont'>3000 &#8381;</p>
                                 <p class='course-price'>1800 &#8381;</p>
                             </div>
-                            <p class="video-course-link-btn-bottom">
-                                <a class="btn btn-primary" href="#videoCourseModal-2" rel="modal:open">Узнать больше</a>
+                            <p class="video-course-link-btn-bottom" onclick="closeAllCourseInfo(2)">
+                                <a class="btn btn-primary" href="#videoCourseModal-2" rel="modal:open">
+                                    Узнать больше
+                                </a>
                             </p>
                         </div>
                         <div class="swiper-button-next video-course-swiper-button-next"></div>
@@ -750,6 +755,170 @@
                     </div>
                 </div>
                 <div class="swiper-button-next team-swiper-button-next"></div>
+            </div>
+        </section>
+
+        <section class='comments-section-container'>
+            <h2 class='title comments-section-title'>Отзывы</h2>
+            <div class='comments-main-content'>
+                <div class="comments-thumbs-container">
+                    <div class="swiper-container comments-gallery-thumbs">
+                        <div class="swiper-wrapper comments-swiper-wrapper">
+                            <div class="swiper-slide swiper-comments-slide flex">
+                                <img class="comments-gallery-thumbs-img" src="./images/comments/comment2.png"/>
+                            </div>
+                            <div class="swiper-slide swiper-comments-slide flex">
+                                <img class="comments-gallery-thumbs-img" src="./images/comments/comment1.png"/>
+                            </div>
+                            <div class="swiper-slide swiper-comments-slide flex">
+                                <img class="comments-gallery-thumbs-img" src="./images/comments/comment0.png"/>
+                            </div>
+                            <div class="swiper-slide swiper-comments-slide flex">
+                                <img class="comments-gallery-thumbs-img" src="./images/comments/comment3.png"/>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-container comments-gallery-top">
+                    <div class="swiper-wrapper comments-swiper-wrapper">
+                        <div class="swiper-slide swiper-comments-slide">
+                            <div class="comments-slide flex">
+                                <img class="comments-gallery-thumbs-img" src="./images/comments/comment1.png"/>
+                                <h3 class="comment-title">
+                                    Евгения Катышева
+                                </h3>
+                                <p class="comment-description">
+                                    Дочь: Саша (6 лет)
+                                </p>
+                                <div class=comment-container>
+                                    <img class="quotation-img-open" src="./images/comments/quotation-1.png"/>
+                                    <p class="comment">
+                                        В конце мая закончила наш второй год обучения и интерес к занятиям у ребёнка только растёт. 
+                                        На английский всегда бежит с большим желанием, 
+                                        занимается с удовольствием и очень любит своего педагога. 
+                                        Света к любому ребёнку найдёт подход, ни разу за 2 года не слышала, чтобы она повышала голос на детей.
+                                    </p>
+                                    <p class="comment-more-info">
+                                        Детям интересно и они работают, некогда шалить.
+                                        Плюс занятия настолько разнообразны, с постоянной сменой деятельности, 
+                                        что детки не устают от скучного сидения за партой, есть время и попрыгать, 
+                                        и посмеяться, и подумать, и что-то смастерить своими руками. 
+                                        Результат от занятий тоже радует, это не первый наш клуб, но только в нем заметила, 
+                                        что ребёнок стал вникать в язык, довольно легко научилась читать, спасибо беспереводной методике, 
+                                        которая позволяет полностью погрузиться в английскую речь. 
+                                        Ждём наше летнее приключение в лагере и новый учебный год в сентябре!
+                                    </p>
+                                    <img class="quotation-img-close" src="./images/comments/quotation-2.png"/>
+                                </div>
+                                <p class="comment-more-btn">
+                                    <a class="btn btn-primary">Подробнее</a>
+                                </p>
+                            </div>
+                        </div>
+                        <div class="swiper-slide swiper-comments-slide">
+                            <div class="comments-slide flex">
+                                <img class="comments-gallery-thumbs-img" src="./images/comments/comment2.png"/>
+                                <h3 class="comment-title">
+                                    Камила Гаркуша
+                                </h3>
+                                <p class="comment-description">
+                                    Сын: Артем (5 лет)
+                                </p>
+                                <div class=comment-container>
+                                    <img class="quotation-img-open" src="./images/comments/quotation-1.png"/>
+                                    <p class="comment">
+                                        Сын занимается у Светланы уже 3 года, несмотря на то, 
+                                        что студии Goodvard пока только год. 
+                                        Просто раньше по другому назывался центр. 
+                                        Когда я искала английский для маленьких (сыну было всего 3 года),
+                                        в городе предложений было мало, это сейчас языковые центры почти на каждом шагу.
+                                        Понравился подход к ребенку, плавно и через игру привлекали к занятиям.
+                                    </p>
+                                    <p class="comment-more-info">
+                                        Конечно сын не сразу полюбил занятия, так как ещё был маленький, 
+                                        но в итоге смогли заинтересовать так, что сейчас он готов ходить туда каждый день! 
+                                        Нас устраивает методика погружения в языковую среду, также большое разнообразие упражнений за одно занятие, 
+                                        все динамично, я считаю это большим плюсом, т.к. учит детей переключать внимание очень быстро, что будет полезно в школе. 
+                                        А также нравится, что занятие длится 1.5 часа, мне кажется это оптимально, много можно успеть дать, 
+                                        а за счёт того, что происходит частая смена деятельности, дети не устают. 
+                                        При этом стоимость обучения не завышена. 
+                                        +После трёх лет занятий у ребенка большой словарный запас , понимает речь, если ним говорят на английском, на занятиях разговаривает на английском, может из текста песен 
+                                        (обычных, не специальных обучающих) выловить знакомые слова. Начинает писать и читать. 
+                                        Пока сложно даётся чтение, но думаю просто по возрасту ему ещё рановато. 
+                                        И конечно же нам нравится сам педагог, чувствуется, что человек занимается любимым делом и поэтому с полной отдачей! 
+                                        Поэтому мы даже не смотрим на другие языковые курсы, несмотря на то, что сейчас их множество. 
+                                        Мы нашли своего педагога! 
+                                    </p>
+                                    <img class="quotation-img-close" src="./images/comments/quotation-2.png"/>
+                                </div>
+                                <p class="comment-more-btn">
+                                    <a class="btn btn-primary">Подробнее</a>
+                                </p>
+                            </div>
+                        </div>
+                        <div class="swiper-slide swiper-comments-slide">
+                            <div class="comments-slide flex">
+                                <img class="comments-gallery-thumbs-img" src="./images/comments/comment0.png"/>
+                                <h3 class="comment-title">
+                                    Юлия Васина
+                                </h3>
+                                <p class="comment-description">
+                                    Дочь: Есения (6 лет)
+                                </p>
+                                <div class=comment-container>
+                                    <img class="quotation-img-open" src="./images/comments/quotation-1.png"/>
+                                    <p class="comment">
+                                        Были у Светланы на трех занятиях. С самого первого занятия ребёнок стал употреблять английские слова дома, 
+                                        в играх с игрушками, дальше - больше. Для меня это огромный показатель.
+                                        Нас с дочкой очень привлекает атмосфера, царящая на занятиях у Светланы.
+                                        Всегда все ярко, интересно, в игре, с танцами, 
+                                        с элементами театрализации. 
+                                    </p>
+                                    <p class="comment-more-info">
+                                        Вдохновения, энергии и процветания вам, Светлана! 
+                                        Спасибо за ваш труд и за ваш энтузиазм!
+                                    </p>
+                                    <img class="quotation-img-close" src="./images/comments/quotation-2.png"/>
+                                </div>
+                                <p class="comment-more-btn">
+                                    <a class="btn btn-primary">Подробнее</a>
+                                </p>
+                            </div>
+                        </div>
+                        <div class="swiper-slide swiper-comments-slide">
+                            <div class="comments-slide flex">
+                                <img class="comments-gallery-thumbs-img" src="./images/comments/comment3.png"/>
+                                <h3 class="comment-title">
+                                    Екатерина Люкшина
+                                </h3>
+                                <p class="comment-description">
+                                    Сын: Ярослав (11 лет)
+                                </p>
+                                <div class=comment-container>
+                                    <img class="quotation-img-open" src="./images/comments/quotation-1.png"/>
+                                    <p class="comment">
+                                        Светлана, не перестанем говорить огромное спасибо за Ваши занятия! 
+                                        Каждое из них настолько насыщенное, увлекательное, динамичное! 
+                                        Дети в нашей группе школьники - это уже не малыши, их в некоторых моментах заинтересовать сложнее, но Вам это всегда удаётся!
+                                        Для нас важный показатель, что мы не слышим - не хочу идти на занятие! 
+                                    </p>
+                                    <p class="comment-more-info"> 
+                                        😂 Ребёнок ходит с удовольствием! 😊 поёт песни на английском, разговаривать стал свободнее.
+                                        В этом году посчастливилось попасть в летний лагерь! И это нечто! 
+                                        👍🏻 каждый день тема была новая, задания самые разнообразные, ребята очень сплотились и 
+                                        бежали каждое утро в отличном настроении навстречу к Вам, друг другу, новым знаниям! 
+                                        С радостью рекомендовали, рекомендуем и будем рекомендовать Вашу школу друзьям, знакомым! 
+                                        😊 мы знаем, что Вы работаете с душой, с любовью на результат! 🤗😘 пчёлка Светлана, Вы лучшая!!! 🐝💋
+                                    </p>
+                                    <img class="quotation-img-close" src="./images/comments/quotation-2.png"/>
+                                </div>
+                                <p class="comment-more-btn">
+                                    <a class="btn btn-primary">Подробнее</a>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </section>
 
