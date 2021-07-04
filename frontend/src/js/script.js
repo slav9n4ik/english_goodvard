@@ -239,6 +239,7 @@ swiperTeam.on('slideChange', function () {
 var commentGalleryThumbs = new Swiper('.comments-gallery-top', {
   slidesPerView: 1
 });
+
 var commentMoreBtn = $(".comment-more-btn");
 for (let i = 0; i < commentMoreBtn.length; i++) {
   commentMoreBtn[i].addEventListener("click", function() {
@@ -251,6 +252,7 @@ for (let i = 0; i < commentMoreBtn.length; i++) {
     }
   });
 }
+
 commentGalleryThumbs.on('slideChange', function () {
   for (let i = 0; i < coll.length; i++) {
     var content = $(".comment-more-info")[i];
@@ -258,6 +260,15 @@ commentGalleryThumbs.on('slideChange', function () {
   }
 });
 
+//certs
+var certsGalleryThumbs = new Swiper(".certs-gallery-top", {
+  slidesPerView: 1,
+  loop: true,
+  navigation: {
+    nextEl: '.certs-swiper-button-next',
+    prevEl: '.certs-swiper-button-prev',
+  },
+});
 
 
 
