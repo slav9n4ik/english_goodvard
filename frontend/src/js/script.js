@@ -237,7 +237,11 @@ swiperTeam.on('slideChange', function () {
 
 //comments
 var commentGalleryThumbs = new Swiper('.comments-gallery-top', {
-  slidesPerView: 1
+  slidesPerView: 1,
+  navigation: {
+    nextEl: '.comment-swiper-button-next',
+    prevEl: '.comment-swiper-button-prev',
+  },
 });
 
 var commentMoreBtn = $(".comment-more-btn");
@@ -260,14 +264,29 @@ commentGalleryThumbs.on('slideChange', function () {
   }
 });
 
-//certs
-var certsGalleryThumbs = new Swiper(".certs-gallery-top", {
-  slidesPerView: 1,
-  loop: true,
-  navigation: {
-    nextEl: '.certs-swiper-button-next',
-    prevEl: '.certs-swiper-button-prev',
-  },
+ymaps.ready(function () {
+  var map = new ymaps.Map("YMapsID", {
+    center: [55.60105316368484, 38.086919431213325],
+    zoom: 16,
+    controls: ["zoomControl"]
+  });
+
+  if (map) {
+    ymaps.modules.require(['Placemark', 'Circle'], function (Placemark, Circle) {
+      var placemark = new Placemark([55.60105316368484, 38.086919431213325]);
+      map.geoObjects.add(placemark);
+    });
+  }
+
+  let mapStyle = $("#YMapsID")[0].style;
+  if (window.screen.width > 700) {
+    mapStyle.minWidth = '400px'
+  }
+  if (window.screen.width > 1025) {
+    mapStyle.minWidth = '600px'
+  }
+
+  map.container.fitToViewport();
 });
 
 

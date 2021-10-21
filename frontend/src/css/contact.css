@@ -1,0 +1,88 @@
+.contact-main-content {
+    background-image: url(../images/contacts/contact-bg.png);
+    background-size: 150% 100%;
+    background-position: 0% 100%;
+    background-repeat: no-repeat;
+
+    display: flex;
+    min-height: 400px;
+    width: 100%;
+    margin-top: -5.5em;
+}
+
+.contacts-content-wrapper {
+    color: #fff;
+}
+
+.contact-main-title {
+    margin-top: 3em;
+    margin-bottom: 1em;
+    color: #fff;
+}
+
+.contact-section-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.phone-img-container {
+    display: none;
+}
+
+.contacts-content-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 55%;
+}
+
+.contact-description {
+    margin: 0;
+    margin-left: 2em;
+    font-size: 0.7rem;
+}
+
+.contact-icon {
+    max-width: 15px;
+    height: auto;
+    margin: 5px;
+}
+
+.maps-block {
+    width: 45%;
+    display: flex;
+    align-items: end;
+}
+
+.maps-block .ymaps-2-1-79-map {
+    clip-path: polygon( 0 0%, 0% 0, 1% 0, 100% 3%, 100% 100%, 100% 100%, 0% 100%, 0% 100%, 0% 0% );
+}
+
+.phone-img-container-mob {
+    margin-top: 1em;
+}
+
+.contact-phone-img {
+    min-height: 270px;
+}
+
+.contact-block {
+    width: 80%;
+    margin-bottom: 1em;
+}
+
+.contact-block p:nth-child(3) {
+    margin-bottom: 0.5em;
+  }
+
+.contact-title {
+    margin: 0;
+    text-transform: uppercase;
+    font-family: Gilroy, sans-serif;
+    line-height: 1.6;
+    font-weight: 700;
+}
+

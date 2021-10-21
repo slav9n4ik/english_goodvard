@@ -21,6 +21,23 @@
     text-align: justify;
 }
 
+.comment-swiper-button-prev,
+.comment-swiper-button-next {
+    margin-left: auto !important;
+    margin-right: auto !important;
+    background: white;
+    border-radius: 50%;
+
+    height: 28px;
+    width: 28px;
+}
+
+.comment-swiper-button-prev::after,
+.comment-swiper-button-next::after {
+    color: #ED8108;
+    font-size: 1rem;
+}
+
 .comment-title,
 .comment-description,
 .comment-more-info,
