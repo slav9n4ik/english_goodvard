@@ -297,8 +297,13 @@ $("#contact-form").submit(function(e){
     status: userDefaultFormInfo.status
   };
 
+  let host = window.location.host;
+  if (host.includes("localhost")) {
+    host = "localhost"
+  }
+
   $.ajax({
-    url: "http://core-service:8080/api/send",
+    url: "http://" + host + ":8080/api/send",
     type: 'post',
     headers: { 
       'Accept': 'application/json',
