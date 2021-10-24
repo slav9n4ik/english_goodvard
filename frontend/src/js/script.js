@@ -298,12 +298,14 @@ $("#contact-form").submit(function(e){
   };
 
   let host = window.location.host;
-  // if (host.includes("localhost")) {
-  //   host = "localhost:8080"
-  // }
+  if (host.includes("localhost")) {
+    host = "http://localhost:8080"
+  } else {
+    host = "https://" + host;
+  }
 
   $.ajax({
-    url: "http://" + host + "/api/send",
+    url: host + "/api/send",
     type: 'post',
     headers: { 
       'Accept': 'application/json',
