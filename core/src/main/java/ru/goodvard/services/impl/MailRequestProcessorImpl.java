@@ -4,6 +4,7 @@ import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
+import ru.goodvard.controller.dto.RequestData;
 import ru.goodvard.controller.dto.SendEmailDto;
 import ru.goodvard.integration.EmailSender;
 import ru.goodvard.integration.HtmlBuilder;
@@ -26,13 +27,13 @@ public class MailRequestProcessorImpl implements MailRequestProcessor {
     private String mainReceiver;
 
     @Override
-    public void send(SendEmailDto request) {
+    public void send(RequestData request) {
         sendToAdmin(request);
         sendToClient(request);
         saveUserData(request);
     }
 
-    private void sendToAdmin(SendEmailDto request) {
+    private void sendToAdmin(RequestData request) {
         emailSender.sendToAdmin(
                 mainReceiver,
                 "Сообщение с формы обратной связи от " + request.getName() + "," + request.getEmail(),
@@ -40,7 +41,7 @@ public class MailRequestProcessorImpl implements MailRequestProcessor {
         );
     }
 
-    private void sendToClient(SendEmailDto request) {
+    private void sendToClient(RequestData request) {
         emailSender.sendHtmlText(
                 request.getName(),
                 request.getEmail(),
@@ -49,7 +50,7 @@ public class MailRequestProcessorImpl implements MailRequestProcessor {
         );
     }
 
-    private void saveUserData(SendEmailDto request) {
+    private void saveUserData(RequestData request) {
         entityResolver.saveParentUserIfNotExists(fromEmailRequestDto(request));
     }
 }

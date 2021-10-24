@@ -264,6 +264,61 @@ commentGalleryThumbs.on('slideChange', function () {
   }
 });
 
+//form
+function displaySubmitByCheckBoxValue() {
+  if ($('.rights-checkbox').is(':checked')){
+    $('#btn-form')[0].style.display = 'block';
+  } else {
+    $('#btn-form')[0].style.display = 'none';
+  }
+}
+
+displaySubmitByCheckBoxValue()
+
+var userDefaultFormInfo = {
+  status: 'INTERESTED',
+}
+
+function setUserStatus(status) {
+  userDefaultFormInfo.status = status;
+  if (status === 'INTERESTED_VIDEO') {
+    let msg = "Добрый день! Хотим узнать про видео-курсы. Свяжитесь с нами, пожалуйста!"
+    $("#message").val(msg)
+  }
+}
+
+$("#contact-form").submit(function(e){
+  e.preventDefault();
+  var formData = {
+    name: $("#fname").val(),
+    email: $("#email").val(),
+    phone: $("#phone").val(),
+    message: $("#message").val(),
+    status: userDefaultFormInfo.status
+  };
+
+  console.log(formData)
+
+  $.ajax({
+    url: "http://localhost:8080/api/send",
+    type: 'post',
+    headers: { 
+      'Accept': 'application/json',
+      'Content-Type': 'application/json' 
+    },
+    contentType:"application/json; charset=utf-8",
+    dataType:"json",
+    data: JSON.stringify({data: formData}),
+    success: function() {
+      $.growl.notice({ message: "Сообщение успешно доставлено!!" });
+    },
+    error: function() {
+      $.growl.error({ message: "Ошибка при отправке сообщения!" });
+    }
+  })
+});
+
+//map
 ymaps.ready(function () {
   var map = new ymaps.Map("YMapsID", {
     center: [55.60105316368484, 38.086919431213325],

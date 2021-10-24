@@ -3,7 +3,7 @@ package ru.goodvard.integration;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.core.io.Resource;
 import org.springframework.stereotype.Component;
-import ru.goodvard.controller.dto.SendEmailDto;
+import ru.goodvard.controller.dto.RequestData;
 
 import static ru.goodvard.utils.FileUtils.readFromResource;
 
@@ -26,9 +26,10 @@ public class GoodVardHtmlBuilder implements HtmlBuilder {
     }
 
     @Override
-    public String adminResponseHtml(SendEmailDto request) {
+    public String adminResponseHtml(RequestData request) {
+        var status = request.getStatus() == null ? "" : request.getStatus().getDescription();
         String htmlTemplate = readFromResource(adminTemplateResource);
-        htmlTemplate = htmlTemplate.replace("${TEXT}", "Зарегистрировано обращение на обратную связь.");
+        htmlTemplate = htmlTemplate.replace("${TEXT}", "Зарегистрировано обращение на обратную связь." + status);
         htmlTemplate = htmlTemplate.replace("${NAME}", "Уважаемый администратор школы");
         htmlTemplate = htmlTemplate.replace("${CUSTOMER_NAME}", request.getName());
         htmlTemplate = htmlTemplate.replace("${PHONE}", request.getPhone());

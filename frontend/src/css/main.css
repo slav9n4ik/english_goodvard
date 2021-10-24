@@ -17,6 +17,10 @@
 
 * {box-sizing: border-box;}
 
+html {
+	scroll-behavior: smooth;
+}
+
 body {
     margin: 0;
     font-family: Gilroy, sans-serif;
@@ -564,8 +568,19 @@ h1, h2, h3, strong {
     .phone-input,
     .message-textarea {
         min-width: 300px;
-        margin-bottom: 0;
-}
+        margin-bottom: 0; 
+    }
+
+    .contact-main-title {
+        margin: 0em auto;
+        margin-top: 3em;
+        margin-bottom: 1em;
+    }
+
+    .contacts-content-wrapper {
+        width: 100%;
+        align-items: end;
+    }
 
 }
 
@@ -698,6 +713,7 @@ h1, h2, h3, strong {
 
     .rights-checkbox-block {
         max-width: 100%;
+        margin-bottom: 6em;
     }
 
     .contact-main-content {
@@ -716,13 +732,13 @@ h1, h2, h3, strong {
     .phone-img-container {
         display: block;
         width: 100%;
-        min-width: 400px;
+        min-width: auto;
         position: relative;
     }
 
     .phone-img {
-        height: 80%;
-        width: auto;
+        width: 100%;
+        height: auto;
         position: absolute;
         bottom: 0;
         right: 0;

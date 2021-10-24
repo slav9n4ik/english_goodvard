@@ -4,7 +4,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import ru.goodvard.controller.dto.ParentUserDto;
 import ru.goodvard.controller.dto.RegistrationDto;
-import ru.goodvard.controller.dto.SendEmailDto;
+import ru.goodvard.controller.dto.RequestData;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
@@ -49,12 +49,12 @@ public class ParentUser {
     @OneToMany(fetch = EAGER, cascade = ALL)
     private Set<ChildUser> childUser;
 
-    public static ParentUser fromEmailRequestDto(SendEmailDto request) {
+    public static ParentUser fromEmailRequestDto(RequestData request) {
         ParentUser parentUser = new ParentUser();
         parentUser.setName(request.getName());
         parentUser.setPhone(request.getPhone());
         parentUser.setEmail(request.getEmail());
-        parentUser.setStatus(INTERESTED);
+        parentUser.setStatus(request.getStatus() == null ? INTERESTED : request.getStatus());
         parentUser.setActivated(false);
         parentUser.setActivationCode(randomUUID());
         parentUser.setUpdateTime(now());

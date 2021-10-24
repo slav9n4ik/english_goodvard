@@ -16,6 +16,7 @@
     </script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.css" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@6.8.4/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="css/jquery.growl.css" type="text/css" />
     <!-- link to my CSS -->
     <link href="css/contact.css" rel="stylesheet">
     <link href="css/form.css" rel="stylesheet">
@@ -45,25 +46,24 @@
 
         <nav class="nav">
             <ul class="nav-list flex">
-                <li class="nav-item"><a href="index.html" class="nav-link">О нас</a></li>
-                <li class="nav-item"><a href="index.html" class="nav-link">Курсы</a></li>
-                <li class="nav-item"><a href="index.html" class="nav-link">Результаты</a></li>
-                <li class="nav-item"><a href="index.html" class="nav-link">Видеоотчеты</a></li>
-                <li class="nav-item"><a href="index.html" class="nav-link">Галерея</a></li>
-                <li class="nav-item"><a href="index.html" class="nav-link">Команда</a></li>
-                <li class="nav-item"><a href="index.html" class="nav-link">Отзывы</a></li>
-                <li class="nav-item"><a href="index.html" class="nav-link">Котакты</a></li>
+                <li class="nav-item"><a href="#about" class="nav-link">О нас</a></li>
+                <li class="nav-item"><a href="#courses" class="nav-link">Курсы</a></li>
+                <li class="nav-item"><a href="#video" class="nav-link">Видеоотчеты</a></li>
+                <li class="nav-item"><a href="#gallery" class="nav-link">Галерея</a></li>
+                <li class="nav-item"><a href="#team" class="nav-link">Команда</a></li>
+                <li class="nav-item"><a href="#comments" class="nav-link">Отзывы</a></li>
+                <li class="nav-item"><a href="#contact" class="nav-link">Котакты</a></li>
             </ul>
         </nav>
 
         <ul class="social-list flex">
-            <li class="social-item"><a href="#" class="social-link"><img src="images/socials/instagram.svg"
+            <li class="social-item"><a href="https://www.instagram.com/english_goodvard/?hl=ru" class="social-link"><img src="images/socials/instagram.svg"
                         alt="instagram"></a></li>
-            <li class="social-item"><a href="#" class="social-link"><img src="images/socials/telegram.svg"
+            <li class="social-item"><a href="https://t.me/goodvard" class="social-link"><img src="images/socials/telegram.svg"
                         alt="telegram"></a></li>
-            <li class="social-item vk"><a href="#" class="social-link"><img src="images/socials/vk.svg" alt="vk"></a>
+            <li class="social-item vk"><a href="https://vk.com/goodvard" class="social-link"><img src="images/socials/vk.svg" alt="vk"></a>
             </li>
-            <li class="social-item youtube"><a href="#" class="social-link"><img src="images/socials/youtube.svg"
+            <li class="social-item youtube"><a href="https://www.youtube.com/channel/UCKNHkLr2lUDWNPfcLdbrYog" class="social-link"><img src="images/socials/youtube.svg"
                         alt="youtube"></a></li>
         </ul>
 
@@ -72,24 +72,24 @@
             <a class="phone-number" href="tel:+7 (964) 784-99-36">+7 (964) 784-99-36</a>
         </div>
 
-        <a class="free-course-button" href="index.html">
+        <a class="free-course-button" href="#form" onclick="setUserStatus('INTERESTED')">
             Записаться на бесплатное занятие
         </a>
     </header>
 
     <main>
-        <section class="hero-container flex">
+        <section id='hero' class="hero-container flex">
             <div class="hero-header-container">
                 <h2 class="hero-header">Защита детей от скучного английского</h2>
                 <p>Ваш ребенок полюбит наш английский</p>
                 <p class="link-btn">
-                    <a class="btn btn-primary" href="#">Подробнее</a>
+                    <a class="btn btn-primary" href="#courses">Подробнее</a>
                 </p>
             </div>
             <img class="hero-image" src="images/hero/hero-girl-bg.png" alt="hero-girl-image">
         </section>
 
-        <section class='about-container'>
+        <section id='about' class='about-container'>
             <h2 class='title about-title'>О нас</h3>
                 <div class='about-container-content flex'>
                     <div class="about-items-container about-grid">
@@ -120,7 +120,7 @@
                 </div>
         </section>
 
-        <section class='courses-section'>
+        <section id='courses' class='courses-section'>
             <div class="courses-main">
                 <h2 class='title course-main-title'>Курсы</h2>
                 <div class="swiper-container course-swiper-container">
@@ -159,7 +159,7 @@
                                             <li>2 раза в неделю по 75 мин.</li>
                                         </ul>
                                         <p class="course-link-btn">
-                                            <a class="btn btn-primary" href="#">Записаться на курс</a>
+                                            <a class="btn btn-primary" onclick="setUserStatus('INTERESTED')" href="#form">Записаться на курс</a>
                                         </p>
                                         <div class="active-img">
                                             <img src="images/courses/courses-girls-img.png" alt='courses-img' />
@@ -198,7 +198,7 @@
                                             <li>2 раза в неделю по 75 мин.</li>
                                         </ul>
                                         <p class="course-link-btn">
-                                            <a class="btn btn-primary" href="#">Записаться на курс</a>
+                                            <a class="btn btn-primary" onclick="setUserStatus('INTERESTED')" href="#form">Записаться на курс</a>
                                         </p>
                                     </div>
                                     <div class="active-img">
@@ -240,7 +240,7 @@
                                             <li>2 раза в неделю по 60 мин.</li>
                                         </ul>
                                         <p class="course-link-btn">
-                                            <a class="btn btn-primary" href="#">Записаться на курс</a>
+                                            <a class="btn btn-primary" onclick="setUserStatus('INTERESTED')" href="#form">Записаться на курс</a>
                                         </p>
                                     </div>
                                     <div class="active-img">
@@ -284,7 +284,7 @@
                                             <li>3 раза в неделю по 4 часа</li>
                                         </ul>
                                         <p class="course-link-btn">
-                                            <a class="btn btn-primary" href="#">Записаться на курс</a>
+                                            <a class="btn btn-primary" onclick="setUserStatus('INTERESTED')" href="#form">Записаться на курс</a>
                                         </p>
                                     </div>
                                     <div class="active-img">
@@ -305,7 +305,7 @@
             </p>
         </section>
 
-        <section class='video-courses-container'>
+        <section id='video-courses' class='video-courses-container'>
             <h2 class='title video-course-section-title'>Видеокурсы</h2>
             <div class="swiper-container video-course-swiper-container">
                 <div class="swiper-wrapper">
@@ -322,10 +322,8 @@
                                 О курсе
                             </p>
                             <div class="video-course-content video-course-content-1">
-                                <p> О курсе Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
-                                    incididunt ut labore et dolore magna aliqua.
-                                    Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
-                                    ex ea commodo consequat.
+                                <p> 
+                                    На данный момент подробнее о курсе можно узнать только связавшись с нами через форму обратной связи, по телефону или уточнить подробности по WhatsUp.
                                 </p>
                             </div>
                             <div class="separator-solid"></div>
@@ -333,10 +331,8 @@
                                 Особенности курса
                             </p>
                             <div class="video-course-content video-course-content-2">
-                                <p>Особенности курса Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
-                                    incididunt ut labore et dolore magna aliqua.
-                                    Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
-                                    ex ea commodo consequat.
+                                <p>
+                                    Приносим извинения за неудобства, мы работаем над тем, чтобы улучшить наш сервис.
                                 </p>
                             </div>
                             <div class="separator-solid"></div>
@@ -346,7 +342,8 @@
                                 <p class='course-price'>1200 &#8381;</p>
                             </div>
                             <p class="video-course-link-btn-bottom" onclick="closeAllCourseInfo(1)">
-                                <a class="btn btn-primary" href="#videoCourseModal-1" rel="modal:open">
+                                <!-- TODO <a class="btn btn-primary" onclick="setUserStatus('INTERESTED_VIDEO')" href="#videoCourseModal-1" rel="modal:open"> -->
+                                <a class="btn btn-primary" onclick="setUserStatus('INTERESTED_VIDEO')" href="#form">
                                     Узнать больше
                                 </a>
                             </p>
@@ -366,10 +363,8 @@
                                 О курсе
                             </p>
                             <div class="video-course-content video-course-content-3">
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
-                                    incididunt ut labore et dolore magna aliqua.
-                                    Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
-                                    ex ea commodo consequat.
+                                <p>
+                                    На данный момент подробнее о курсе можно узнать только связавшись с нами через форму обратной связи, по телефону или уточнить подробности по WhatsUp.
                                 </p>
                             </div>
                             <div class="separator-solid"></div>
@@ -377,10 +372,8 @@
                                 Особенности курса
                             </p>
                             <div class="video-course-content video-course-content-4">
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
-                                    incididunt ut labore et dolore magna aliqua.
-                                    Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
-                                    ex ea commodo consequat.
+                                <p>
+                                    Приносим извинения за неудобства, мы работаем над тем, чтобы улучшить наш сервис.
                                 </p>
                             </div>
                             <div class="separator-solid"></div>
@@ -390,7 +383,8 @@
                                 <p class='course-price'>1800 &#8381;</p>
                             </div>
                             <p class="video-course-link-btn-bottom" onclick="closeAllCourseInfo(2)">
-                                <a class="btn btn-primary" href="#videoCourseModal-2" rel="modal:open">
+                                <!-- TODO <a class="btn btn-primary" onclick="setUserStatus('INTERESTED_VIDEO')" href="#videoCourseModal-2" rel="modal:open"> -->
+                                <a class="btn btn-primary" onclick="setUserStatus('INTERESTED_VIDEO')" href="#form">
                                     Узнать больше
                                 </a>
                             </p>
@@ -418,7 +412,7 @@
             </div>
         </section>
 
-        <section class='video-container'>
+        <section id='video' class='video-container'>
             <h2 class='title video-section-title'>Видеоотчеты</h2>
             <div class='video-main-content'>
                 <div class="swiper-container video-gallery-top">
@@ -573,7 +567,7 @@
             </div>
         </section>
 
-        <section class='gallery-container'>
+        <section id='gallery' class='gallery-container'>
             <h2 class='title gallery-section-title'>Галерея</h2>
             <div class='gallery-main-content flex'>
                 <div class="swiper-button-prev gallery-swiper-button-prev"></div>
@@ -674,11 +668,11 @@
                 <div class="swiper-button-next gallery-swiper-button-next"></div>
             </div>
             <p class="video-link-btn">
-                <a class="btn btn-primary" href="#">Больше фото и видео</a>
+                <a class="btn btn-primary" href="https://www.instagram.com/english_goodvard/?hl=ru">Больше фото и видео</a>
             </p>
         </section>
 
-        <section class='team-section-container'>
+        <section id='team' class='team-section-container'>
             <h2 class='title team-section-title'>Наша команда</h2>
             <div class='team-main-content flex'>
                 <div class="swiper-button-prev team-swiper-button-prev"></div>
@@ -768,7 +762,7 @@
             </div>
         </section>
 
-        <section class='comments-section-container'>
+        <section id='comments' class='comments-section-container'>
             <h2 class='title comments-section-title'>Отзывы</h2>
             <div class='comments-main-content'>
                 <div class="swiper-container comments-gallery-top">
@@ -965,14 +959,14 @@
             </div>
             <div class="swiper-button-next certs-swiper-button-next"></div>
         </section> -->
-        <section class='form-section-container'>
+        <section id='form' class='form-section-container'>
             <div class='form-content'>
                 <div class='pencil-img-wrapper'>
                     <img class="pencil-img" src="images/form/pencil-form-bg.png" alt="pencil-form-bg">
                 </div>
                 <div class="main-text">
                     <h2 class='title form-section-title'>Запись</h2>
-                    <form class="contact-form">
+                    <form id='contact-form' class="contact-form">
                         <input class="fname-input" placeholder="Введите имя" id="fname" type="text">
                         <input class="email-input" placeholder="Введите e-mail" id="email" type="email">
                         <input class="phone-input" placeholder="Введите телефон" id="phone" type="text">
@@ -983,18 +977,19 @@
                         ></textarea>
                         <div class="rights-checkbox-block rights-checkbox-block-mobile">
                             <label class="container">
-                                <input class="rights-checkbox" type="checkbox"/>
+                                <input class="rights-checkbox" type="checkbox" onclick="checkBoxClick()"/>
                                 <span class="checkmark"></span>
                             </label>
                             <span>Нажимая кнопку я соглашаюсь с 
                                 <a href="http://www.consultant.ru/document/cons_doc_LAW_61801/" class="politics">политикой конфиденциальности</a>
                             </span>
                         </div>
-                        <button class="btn btn-primary btn-form">Отправить сообщение</button>
+                        <!-- <input type="submit" id="btn-form" class="btn btn-primary btn-form" data-method="serialize" value='Отправить сообщение'> -->
+                        <input type="submit" id="btn-form" class="btn btn-primary btn-form" value='Отправить сообщение'>
                     </form>
                     <div class="rights-checkbox-block">
                         <label class="container">
-                            <input class="rights-checkbox" type="checkbox"/>
+                            <input class="rights-checkbox" type="checkbox" onclick="displaySubmitByCheckBoxValue()"/>
                             <span class="checkmark"></span>
                         </label>
                         <span>Нажимая кнопку я соглашаюсь с 
@@ -1005,7 +1000,7 @@
             </div>
         </section>
 
-        <section class='contact-section-container'>
+        <section id='contact' class='contact-section-container'>
             <div class="phone-img-container-mob">
                 <img class="contact-phone-img" src="images/contacts/phone-img-mob.png" alt="phone-img-mob">
             </div>
@@ -1054,6 +1049,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@6.8.4/swiper-bundle.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.js"></script>
+    <script src="js/jquery.growl.js" type="text/javascript"></script>
     <script src="js/script.js"></script>
 
     <!-- GOOGLE ANALYTICS -->

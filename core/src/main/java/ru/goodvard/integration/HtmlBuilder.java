@@ -1,8 +1,8 @@
 package ru.goodvard.integration;
 
-import ru.goodvard.controller.dto.SendEmailDto;
+import ru.goodvard.controller.dto.RequestData;
 
 public interface HtmlBuilder {
     String customerResponseHtml(String customerName);
-    String adminResponseHtml(SendEmailDto request);
+    String adminResponseHtml(RequestData request);
 }
