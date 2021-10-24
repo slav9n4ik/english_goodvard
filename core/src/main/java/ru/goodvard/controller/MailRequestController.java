@@ -17,7 +17,7 @@ import static ru.goodvard.controller.dto.ResultDto.resultOf;
 @Slf4j
 @RestController
 @RequiredArgsConstructor
-@CrossOrigin(origins = {"http://core-service:5000", "http://localhost:5000"})
+@CrossOrigin(origins = {"http://localhost:5000", "https://goodvard.ru"})
 public class MailRequestController {
 
     private final MailRequestProcessor mailRequestProcessor;
