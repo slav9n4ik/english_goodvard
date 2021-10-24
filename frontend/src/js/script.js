@@ -298,7 +298,7 @@ $("#contact-form").submit(function(e){
   };
 
   $.ajax({
-    url: "http://core-service:8080/api/send",
+    url: "http://localhost:8080/api/send",
     type: 'post',
     headers: { 
       'Accept': 'application/json',
