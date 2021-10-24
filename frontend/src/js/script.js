@@ -297,10 +297,8 @@ $("#contact-form").submit(function(e){
     status: userDefaultFormInfo.status
   };
 
-  console.log(formData)
-
   $.ajax({
-    url: "http://localhost:8080/api/send",
+    url: "http://core-service:8080/api/send",
     type: 'post',
     headers: { 
       'Accept': 'application/json',

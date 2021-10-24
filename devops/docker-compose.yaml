@@ -1,14 +1,33 @@
 version: '3'
 services:
-#  frontend:
-#    build: frontend/.
-#    ports:
-#      - "5000:5000"
-  core:
+  frontend-service:
+    build: frontend/.
+    ports:
+      - "5000:5000"
+    networks:
+      goodvard-net:
+
+  core-service:
     build: core/.
     ports:
       - "8080:8080"
-#  db:
-#    build: db/.
-#    ports:
-#      - "5434:5434"
+    networks:
+      goodvard-net:
+
+  db-service:
+    image: postgres
+    restart: always
+    volumes:
+      - /home/root/db:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_PASSWORD:
+      POSTGRES_DB: goodvard_db
+      PGDATA: /var/lib/postgresql/data/pgdata
+    networks:
+      goodvard-net:
+
+networks:
+  goodvard-net:
+    name: goodvard-net
