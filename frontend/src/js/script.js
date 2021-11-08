@@ -341,9 +341,11 @@ ymaps.ready(function () {
   let mapStyle = $("#YMapsID")[0].style;
   if (window.screen.width > 700) {
     mapStyle.minWidth = '400px'
+    $('#map-wrapper')[0].style.minWidth = '400px'
   }
   if (window.screen.width > 1025) {
     mapStyle.minWidth = '600px'
+    $('#map-wrapper')[0].style.minWidth = '600px'
   }
 
   map.container.fitToViewport();

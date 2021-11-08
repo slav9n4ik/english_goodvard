@@ -967,9 +967,9 @@
                 <div class="main-text">
                     <h2 class='title form-section-title'>Запись</h2>
                     <form id='contact-form' class="contact-form">
-                        <input class="fname-input" placeholder="Введите имя" id="fname" type="text">
-                        <input class="email-input" placeholder="Введите e-mail" id="email" type="email">
-                        <input class="phone-input" placeholder="Введите телефон" id="phone" type="text">
+                        <input class="fname-input" placeholder="Введите имя" id="fname" required type="text">
+                        <input class="email-input" placeholder="Введите e-mail" id="email" required type="email">
+                        <input class="phone-input" placeholder="Введите телефон" id="phone" required pattern="(^8|7|\+7)((\d{10})|(\s\(\d{3}\)\s\d{3}\s\d{2}\s\d{2}))" type="text">
                         <textarea class="message-textarea" 
                                     placeholder="Введите сообщение" 
                                     id="message"
@@ -1005,8 +1005,8 @@
                 <img class="contact-phone-img" src="images/contacts/phone-img-mob.png" alt="phone-img-mob">
             </div>
             <div class='contact-main-content'>
-                <div class="maps-block">
-                    <div id="YMapsID" style="width: 100%; height: 90%;"></div>
+                <div id="map-wrapper" class="maps-block">
+                    <div id="YMapsID" style="width: 100%; height: 90%; position: absolute; bottom: 0; left: 0;"></div>
                 </div>
                 <div class="contacts-content-wrapper">
                     <h2 class='title contact-main-title'>Контакты</h2>
