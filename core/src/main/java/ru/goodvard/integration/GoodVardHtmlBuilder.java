@@ -16,6 +16,9 @@ public class GoodVardHtmlBuilder implements HtmlBuilder {
     @Value("classpath:htmlTemplates/AdminResponse.html")
     private Resource adminTemplateResource;
 
+    @Value("classpath:htmlTemplates/WeeklyReportToAdmin.html")
+    private Resource adminWeeklyReportHtml;
+
     @Override
     public String customerResponseHtml(String customerName) {
         String text = "Ваше обращение в GoodVard зарегистрировано. Мы постараемся связаться с Вами в ближайшее время";
@@ -35,6 +38,14 @@ public class GoodVardHtmlBuilder implements HtmlBuilder {
         htmlTemplate = htmlTemplate.replace("${PHONE}", request.getPhone());
         htmlTemplate = htmlTemplate.replace("${EMAIL}", request.getEmail());
         htmlTemplate = htmlTemplate.replace("${MESSAGE}", request.getMessage());
+        return htmlTemplate;
+    }
+
+    @Override
+    public String adminWeeklyReportHtml(long count) {
+        String htmlTemplate = readFromResource(adminWeeklyReportHtml);
+        htmlTemplate = htmlTemplate.replace("${TEXT}", "Еженедельный отчет.");
+        htmlTemplate = htmlTemplate.replace("${MESSAGE}", "В базе " + count + "  пользователей");
         return htmlTemplate;
     }
 }

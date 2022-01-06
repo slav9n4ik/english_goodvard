@@ -14,6 +14,11 @@ public class EntityResolverImpl implements EntityResolver {
     private final ParentRepository parentRepository;
 
     @Override
+    public long getUsersCount() {
+        return parentRepository.count();
+    }
+
+    @Override
     public void saveParentUserIfNotExists(ParentUser user) {
         log.info("Save user {} {} if not exist", user.getSurname(), user.getName());
         var parentsByPhone = parentRepository.findAllByPhone(user.getPhone());
